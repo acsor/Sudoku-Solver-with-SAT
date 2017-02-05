@@ -3,7 +3,6 @@ package sudoku;
 import sat.SATSolver;
 import sat.env.Environment;
 import sat.formula.Formula;
-import sudoku.Sudoku.ParseException;
 
 import java.io.IOException;
 

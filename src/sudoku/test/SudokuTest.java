@@ -2,9 +2,18 @@ package sudoku.test;
 
 import org.junit.Test;
 import org.testng.Assert;
+import sudoku.ParseException;
 import sudoku.Sudoku;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class SudokuTest {
+
+	private static final String DIR_SAMPLES = "samples/";
 
 	/*
     * make sure assertions are turned on!
@@ -78,11 +87,62 @@ public class SudokuTest {
 						".3.2\n";
 		final Sudoku s = new Sudoku(2, cells);
 
-		System.out.println(s);
+		// System.out.println(s);
 		Assert.assertEquals(
 				s.toString(),
 				expectedResult
 		);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testFromFileInvalidBlockSize () throws IOException, ParseException {
+		final String fileName = "samples/sudoku_evil.txt";
+		Sudoku.fromFile(Sudoku.VAL_MAX_BLOCK_SIZE + 1, fileName);
+	}
+
+	@Test
+	public void testFromFiles () throws IOException, ParseException {
+		final File samplesDir = new File(DIR_SAMPLES);
+		final File[] sampleFiles;
+		final FilenameFilter filter = (dir, name) -> !name.contentEquals("sudoku_4x4.txt");
+		Sudoku s;
+
+		if (samplesDir.isDirectory()) {
+			sampleFiles = samplesDir.listFiles(filter);
+
+			if (sampleFiles != null) {
+				for (File f: sampleFiles) {
+					s = Sudoku.fromFile(3, f.getPath());
+
+					// System.out.println(s);
+					// System.out.println(readFile(f.getPath()));
+
+					Assert.assertEquals(
+							s.toString(),
+							readFile(f)
+					);
+				}
+			}
+		}
+	}
+
+	private String readFile (File file) throws FileNotFoundException {
+		Scanner in = null;
+		final StringBuilder b = new StringBuilder();
+
+		try {
+			in = new Scanner(file);
+
+			while (in.hasNextLine()) {
+				b.append(in.nextLine()).append("\n");
+			}
+		} finally {
+			if (in != null) {
+				in.close();
+			}
+		}
+
+		return b.toString();
 	}
 
 }
