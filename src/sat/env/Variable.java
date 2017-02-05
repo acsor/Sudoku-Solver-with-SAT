@@ -8,7 +8,7 @@ package sat.env;
 
 
 /**
- * A Variable is a logical propositional variable
+ * A Variable is a logical propositional variable.<br>
  * This datatype is immutable.
  */
 public class Variable {
@@ -42,6 +42,8 @@ public class Variable {
 	 */
 	@Override
 	public boolean equals (Object o) {
+		Variable v;
+
 		if (o == this) {
 			return true;
 		}
@@ -49,7 +51,7 @@ public class Variable {
 			return false;
 		}
 
-		Variable v = (Variable) o;
+		v = (Variable) o;
 
 		return v.name.equals(name);
 	}

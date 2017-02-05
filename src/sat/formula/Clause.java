@@ -182,14 +182,24 @@ public class Clause implements Iterable<Literal> {
 	}
 
 	private static ImmutableList<Literal> reduce (ImmutableList<Literal> literals, Literal l) {
-		if (literals.isEmpty()) return literals;
+		if (literals.isEmpty()) {
+			return literals;
+		}
+
 		Literal first = literals.first();
 		ImmutableList<Literal> rest = literals.rest();
-		if (first.equals(l)) return null;
-		else if (first.equals(l.getNegation())) return rest;
-		else {
+
+		if (first.equals(l)) {
+			return null;
+		} else if (first.equals(l.getNegation())) {
+			return rest;
+		} else {
 			ImmutableList<Literal> restR = reduce(rest, l);
-			if (restR == null) return null;
+
+			if (restR == null) {
+				return null;
+			}
+
 			return restR.add(first);
 		}
 	}

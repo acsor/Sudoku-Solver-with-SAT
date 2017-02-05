@@ -1,6 +1,9 @@
-package sat.formula;
+package sudoku.test;
 
 import org.junit.Test;
+import sat.formula.Clause;
+import sat.formula.Literal;
+import sat.formula.PositiveLiteral;
 
 public class FormulaTest {    
     Literal a = PositiveLiteral.make("a");
@@ -11,7 +14,7 @@ public class FormulaTest {
     Literal nc = c.getNegation();
 
     // make sure assertions are turned on!  
-    // we don't want to run test cases without assertions too.
+    // we don't want to run sudoku.test.test cases without assertions too.
     // see the handout to find out how to turn them on.
     @Test(expected=AssertionError.class)
     public void testAssertionsEnabled() {
@@ -19,7 +22,7 @@ public class FormulaTest {
     }
     
     
-    // TODO: put your test cases here
+    // TODO: put your sudoku.test.test cases here
 
     
     

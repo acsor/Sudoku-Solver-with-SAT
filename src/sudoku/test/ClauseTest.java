@@ -1,12 +1,15 @@
-package sat.formula;
+package sudoku.test;
 
 import org.junit.Test;
+import sat.formula.Clause;
+import sat.formula.Literal;
+import sat.formula.PositiveLiteral;
 
 import static org.junit.Assert.assertTrue;
 
 public class ClauseTest {
 
-	// helpful values for test cases
+	// helpful values for sudoku.test.test cases
 	Clause empty = makeClause();
 	Literal p = PositiveLiteral.make("P");
 	Literal q = PositiveLiteral.make("Q");
@@ -24,7 +27,7 @@ public class ClauseTest {
 	Clause cpnq = makeClause(p, nq);
 
 	// makeClause sure assertions are turned on!
-	// we don't want to run test cases without assertions too.
+	// we don't want to run sudoku.test.test cases without assertions too.
 	// see the handout to find out how to turn them on.
 	@Test(expected = AssertionError.class)
 	public void testAssertionsEnabled () {
