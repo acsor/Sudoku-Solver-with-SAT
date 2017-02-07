@@ -17,7 +17,7 @@ import java.util.Iterator;
  * A clause is an immutable set of literals that does not contain
  * a literal and its negation.
  * <p>
- * Note: reduce returns null; a questionnable design decision
+ * Note: reduce returns null; a questionable design decision
  */
 public class Clause implements Iterable<Literal> {
 
@@ -61,7 +61,7 @@ public class Clause implements Iterable<Literal> {
 	void checkRep () {
 		// check whether assertions are turned on.
 		// if they're not on, we want to avoid all the recursive
-		// traversal that checkRep(literals) would do.
+		// traversal that checkRepresentation(literals) would do.
 		try {
 			assert false;
 		} catch (AssertionError e) {
@@ -210,12 +210,19 @@ public class Clause implements Iterable<Literal> {
 
 	@Override
 	public boolean equals (Object that) {
-		if (this == that) return true;
-		if (!(that instanceof Clause)) return false;
+		if (this == that)
+			return true;
+		if (!(that instanceof Clause))
+			return false;
+
 		Clause c = (Clause) that;
-		if (size() != c.size()) return false;
+
+		if (size() != c.size())
+			return false;
 		for (Literal l : literals)
-			if (!(c.contains(l))) return false;
+			if (!(c.contains(l)))
+				return false;
+
 		return true;
 	}
 

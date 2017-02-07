@@ -70,4 +70,5 @@ public class EmptyImmutableList<E> implements ImmutableList<E> {
 	public String toString () {
 		return "[]";
 	}
+
 }

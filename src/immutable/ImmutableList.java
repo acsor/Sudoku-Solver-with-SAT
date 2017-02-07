@@ -62,6 +62,7 @@ public interface ImmutableList<E> extends Iterable<E> {
     /**
      * see Iterable.iterator()
      */
+    @Override
     public Iterator<E> iterator();
 
 }

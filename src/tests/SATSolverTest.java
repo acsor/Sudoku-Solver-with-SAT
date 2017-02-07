@@ -1,4 +1,4 @@
-package sudoku.test;
+package tests;
 
 import org.junit.Test;
 

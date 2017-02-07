@@ -18,21 +18,21 @@ public abstract class Literal {
 
 	protected Variable var;
 
-	// not private, so it can be set in PositiveLiteral's factory method
+	// Not private, so it can be set in PositiveLiteral's factory method.
 	Literal negation;
 
-    /* Rep invariant:
-	 *   this.negation.negation == this
-     *   this.name != null (part of rep of superclass)
-     *   this.negation.name.equals (this.name)
-     * Invariant is established only when factory method in PositiveLiteral has completed,
-     * so checkRep is called there rather than in constructor here.
-     * 
-     * Abstraction function:
-     *    if this is an instance of PositiveLiteral, then represents the literal var
-     *    if this is an instance of NegatedLiteral, then represents the literal !var
-     */
-
+	/**
+	 * Rep invariant:
+	 * 		this.negation.negation == this
+	 * 		this.name != null (part of rep of superclass)
+	 * 		this.negation.name.equals (this.name)
+	 * Invariant is established only when factory method in PositiveLiteral has completed,
+	 * so checkRepresentation is called there rather than in constructor here.
+	 *
+	 * Abstraction function:
+	 *    if this is an instance of PositiveLiteral, then represents the literal var
+	 *    if this is an instance of NegatedLiteral, then represents the literal !var
+	 */
 	void checkRep () {
 		assert this.getNegation().getNegation() == this : "Variable, Rep invariant: negation of negation";
 		assert this.getNegation().var.getName().equals(var.getName()) : "Variable, Rep invariant: names match";
@@ -67,7 +67,7 @@ public abstract class Literal {
 		return this.negation == literal;
 	}
 
-	// same as Object.equals, but must override bool.Variable.equals
+	// Same as Object.equals, but must override bool.Variable.equals
 	@Override
 	public boolean equals (Object o) {
 		return this == o;
