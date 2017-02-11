@@ -22,10 +22,11 @@ import java.util.Iterator;
  *
  * <p>
  * Point a. of Problem 2.
- * Before I start solving this point, I should point out that I don't see any recursive
- * definition for this data type, which is what makes data type expression worth using.
- * Nevertheless, I'll try writing it as best as I can:<br>
- *     Formula = Formula() + Formula(Clause) + Formula(Variable)
+ *     <ul>
+ *         <li>Formula = ImmutableList&lt;Clause&gt;;</li>
+ *         <li>Clause = ImmutableList&lt;Literal&gt;;</li>
+ *         <li>Literal = PositiveLiteral(Variable v) + NegativeLiteral(Variable v);</li>
+ *     </ul>
  * </p>
  *
  */
@@ -65,6 +66,11 @@ public class Formula implements Iterable<Clause> {
 		checkRepresentation();
 	}
 
+	public Formula (ImmutableList<Clause> clauses) {
+		this.clauses = clauses;
+		checkRepresentation();
+	}
+
 	public Formula (Clause... clauses) {
 		this.clauses = new EmptyImmutableList<>();
 
@@ -95,7 +101,7 @@ public class Formula implements Iterable<Clause> {
 	 *        corresponding formula is (a or b) and (!c or d).
 	 * </p>
 	 */
-	void checkRepresentation () {
+	private void checkRepresentation () {
 		if (clauses == null) {
 			throw new IllegalStateException("clauses must not be null");
 		}
@@ -103,14 +109,12 @@ public class Formula implements Iterable<Clause> {
 
 	/**
 	 * Add a clause to this problem.<br>
+	 * The current instance is not modified.<br>
 	 *
 	 * @return a new problem with the clauses of this, but c added.
 	 */
 	public Formula addClause (Clause c) {
-		clauses = clauses.add(c);
-		checkRepresentation();
-
-		return this;
+		return new Formula(clauses.add(c));
 	}
 
 	/**
@@ -120,6 +124,10 @@ public class Formula implements Iterable<Clause> {
 	 */
 	public ImmutableList<Clause> getClauses () {
 		return clauses;
+	}
+
+	public boolean contains (Clause c) {
+		return clauses.contains(c);
 	}
 
 	/**
@@ -147,29 +155,53 @@ public class Formula implements Iterable<Clause> {
 	}
 
 	/**
-	 * @return a new problem corresponding to the disjunction of this and p
+	 * @return a new problem corresponding to the disjunction of this and p.
 	 */
 	public Formula or (Formula p) {
-		// TODO: implement this.
-		// Hint: you'll need to use the distributive law to preserve conjunctive normal form, i.e.:
-		//   to do (a & b) .or (c & d) (also expressible as (a AND b) OR (c AND d))
-		//   you'll need to make (a | b) & (a | c) & (b | c) & (b | d)
-		throw new RuntimeException("not yet implemented.");
+		/*
+		Hint: you'll need to use the distributive law to preserve conjunctive normal form, i.e.:
+			to do (a ^ b) v (c ^ d)
+			you'll need to make (a v b) ^ (a v c) ^ (b v c) ^ (b v d) (not from the implementor: aren't the first
+			two clauses wrong? Shouldn't they be (a v c) ^ (a v d)?)
+		*/
+		Formula result = new Formula();
+
+		for (Clause first: clauses) {
+			for (Clause second: p.clauses) {
+				result = result.addClause(first.merge(second));
+			}
+		}
+
+		return result;
 	}
 
 	/**
-	 * @return a new problem corresponding to the negation of this
+	 * @return a new problem corresponding to the negation of this.
 	 */
 	public Formula not () {
-		// TODO: implement this.
-		// Hint: you'll need to apply DeMorgan's Laws (http://en.wikipedia.org/wiki/De_Morgan's_laws)
-		// to move the negation down to the literals, and the distributive law to preserve
-		// conjunctive normal form, i.e.:
-		//   if you start with (a | b) & c,
-		//   you'll need to make !((a | b) & c)
-		//                       => (!a & !b) | !c            (moving negation down to the literals)
-		//                       => (!a | !c) & (!b | !c)    (conjunctive normal form)
-		throw new RuntimeException("not yet implemented.");
+		/*
+		TO-DO: test this code.
+		Hint: you'll need to apply DeMorgan's Laws (http://en.wikipedia.org/wiki/De_Morgan's_laws)
+		to move the negation down to the literals, and the distributive law to preserve
+		conjunctive normal form, i.e.:
+			if you start with (a v b) ^ c,
+			you'll need to make ¬((a v b) ^ c)
+		                      <=> (¬a ^ ¬b) v ¬c            (moving negation down to the literals)
+		                      <=> (¬a v ¬c) ^ (¬b v ¬c)     (conjunctive normal form)
+		 */
+		Formula result = null;
+
+		if (clauses.size() == 0) {
+			result = new Formula();
+		} else if (clauses.size() > 0) {
+			result = clauses.first().not();
+
+			for (Clause c: clauses.rest()) {
+				result = result.or(c.not());
+			}
+		}
+
+		return result;
 	}
 
 	/**
@@ -179,15 +211,48 @@ public class Formula implements Iterable<Clause> {
 		return clauses.size();
 	}
 
+	@Override
+	public boolean equals (Object that) {
+		final Formula cThat;
+
+		if (!(that instanceof Formula)) {
+			return false;
+		}
+		if (this == that) {
+			return true;
+		}
+
+		cThat = (Formula) that;
+
+		for (Clause c: clauses) {
+			if (!cThat.contains(c)) {
+				return false;
+			}
+		}
+		for (Clause c: cThat.clauses) {
+			if (!this.contains(c)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	/**
 	 * @return string representation of this formula.
 	 */
 	public String toString () {
 		final StringBuilder b = new StringBuilder();
-		b.append("Problem[");
+		final Iterator<Clause> it = clauses.iterator();
 
-		for (Clause c : clauses) {
-			b.append("\n").append(c);
+		b.append(Formula.class.getSimpleName()).append("[");
+
+		while (it.hasNext()) {
+			b.append(it.next());
+
+			if (it.hasNext()) {
+				b.append(", ");
+			}
 		}
 
 		return b.append("]").toString();

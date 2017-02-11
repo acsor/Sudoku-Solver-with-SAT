@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edeab4a-07b0-4295-862f-85b653a5e2fa" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sudoku/test/ClauseTest.java" afterPath="$PROJECT_DIR$/src/tests/ClauseTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sudoku/test/FormulaTest.java" afterPath="$PROJECT_DIR$/src/tests/FormulaTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sudoku/test/SATSolverTest.java" afterPath="$PROJECT_DIR$/src/tests/SATSolverTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sudoku/test/SudokuTest.java" afterPath="$PROJECT_DIR$/src/tests/SudokuTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/immutable/EmptyImmutableList.java" afterPath="$PROJECT_DIR$/src/immutable/EmptyImmutableList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/immutable/ImmutableList.java" afterPath="$PROJECT_DIR$/src/immutable/ImmutableList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" afterPath="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sat/formula/Clause.java" afterPath="$PROJECT_DIR$/src/sat/formula/Clause.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sat/formula/Formula.java" afterPath="$PROJECT_DIR$/src/sat/formula/Formula.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sat/formula/Literal.java" afterPath="$PROJECT_DIR$/src/sat/formula/Literal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/FormulaTest.java" afterPath="$PROJECT_DIR$/src/tests/FormulaTest.java" />
     </list>
     <ignored path="ps4-starting.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,21 +30,22 @@
       <file leaf-file-name="Formula.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1131">
-              <caret line="178" column="29" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
+            <state relative-caret-position="324">
+              <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#Formula#0" expanded="true" />
+                <element signature="docComment;method#Formula#0;class#Formula#0" expanded="true" />
                 <element signature="method#Formula#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#Formula#1;class#Formula#0" expanded="true" />
                 <element signature="method#Formula#1;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#Formula#2;class#Formula#0" expanded="true" />
                 <element signature="method#Formula#2;class#Formula#0" expanded="true" />
                 <element signature="method#Formula#3;class#Formula#0" expanded="true" />
+                <element signature="method#Formula#4;class#Formula#0" expanded="true" />
+                <element signature="docComment;method#checkRepresentation#0;class#Formula#0" expanded="true" />
                 <element signature="method#checkRepresentation#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#addClause#0;class#Formula#0" expanded="true" />
-                <element signature="method#addClause#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#getClauses#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#iterator#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
@@ -60,8 +55,7 @@
                 <element signature="docComment;method#not#0;class#Formula#0" expanded="true" />
                 <element signature="method#not#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#getSize#0;class#Formula#0" expanded="true" />
-                <element signature="e#4721#4722#0" expanded="true" />
-                <element signature="e#4749#4750#0" expanded="true" />
+                <element signature="method#equals#0;class#Formula#0" expanded="true" />
                 <element signature="docComment;method#toString#0;class#Formula#0" expanded="true" />
                 <element signature="method#toString#0;class#Formula#0" expanded="true" />
               </folding>
@@ -69,45 +63,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormulaTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests/FormulaTest.java">
+      <file leaf-file-name="ClauseTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/ClauseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="367">
+              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#testFormulasConstructors#0;class#FormulaTest#0" expanded="true" />
-                <element signature="method#testFormulaConstructor#0;class#FormulaTest#0" expanded="true" />
-                <element signature="method#make#0;class#FormulaTest#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Literal.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sat/formula/Literal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="docComment;class#Literal#0" expanded="true" />
-                <element signature="method#checkRep#0;class#Literal#0" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-                <element signature="e#1369#1370#0" expanded="true" />
-                <element signature="e#1390#1391#0" expanded="true" />
-                <element signature="docComment;method#getVariable#0;class#Literal#0" expanded="true" />
-                <element signature="e#1489#1490#0" expanded="true" />
-                <element signature="e#1506#1507#0" expanded="true" />
-                <element signature="docComment;method#getNegation#0;class#Literal#0" expanded="true" />
-                <element signature="e#1615#1616#0" expanded="true" />
-                <element signature="e#1637#1638#0" expanded="true" />
-                <element signature="docComment;method#negates#0;class#Literal#0" expanded="true" />
-                <element signature="e#1757#1758#0" expanded="true" />
-                <element signature="e#1795#1796#0" expanded="true" />
-                <element signature="e#1909#1910#0" expanded="true" />
-                <element signature="e#1932#1933#0" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
+                <element signature="method#testChooseLiteral#0;class#ClauseTest#0" expanded="true" />
+                <element signature="method#makeClause#0;class#ClauseTest#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,33 +82,41 @@
       <file leaf-file-name="Clause.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
+            <state relative-caret-position="1782">
+              <caret line="154" column="8" lean-forward="false" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Clause#0" expanded="true" />
                 <element signature="method#Clause#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#Clause#1;class#Clause#0" expanded="true" />
-                <element signature="method#Clause#1;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#Clause#2;class#Clause#0" expanded="true" />
                 <element signature="method#Clause#2;class#Clause#0" expanded="true" />
-                <element signature="method#checkRep#0;class#Clause#0" expanded="true" />
-                <element signature="method#checkRep#1;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#chooseLiteral#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#isUnit#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#isEmpty#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#size#0;class#Clause#0" expanded="true" />
+                <element signature="method#checkRepresentation#0;class#Clause#0" expanded="true" />
+                <element signature="method#checkRepresentation#1;class#Clause#0" expanded="true" />
                 <element signature="docComment;method#contains#0;class#Clause#0" expanded="true" />
                 <element signature="docComment;method#add#0;class#Clause#0" expanded="true" />
                 <element signature="method#add#0;class#Clause#0" expanded="true" />
                 <element signature="docComment;method#merge#0;class#Clause#0" expanded="true" />
                 <element signature="method#merge#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#iterator#0;class#Clause#0" expanded="true" />
-                <element signature="docComment;method#reduce#0;class#Clause#0" expanded="true" />
-                <element signature="method#reduce#0;class#Clause#0" expanded="true" />
-                <element signature="method#reduce#1;class#Clause#0" expanded="true" />
+                <element signature="e#5679#5680#0" expanded="true" />
+                <element signature="e#5712#5713#0" expanded="true" />
                 <element signature="method#equals#0;class#Clause#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormulaTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/FormulaTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#testFormulasConstructors#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#testOr#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#testAnd#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#testNot#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#testEquals#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#testFormulaConstructor#0;class#FormulaTest#0" expanded="true" />
+                <element signature="method#make#0;class#FormulaTest#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/sat/formula/PositiveLiteral.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/Literal.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/Clause.java" />
-        <option value="$PROJECT_DIR$/src/sat/formula/Formula.java" />
         <option value="$PROJECT_DIR$/src/tests/FormulaTest.java" />
+        <option value="$PROJECT_DIR$/src/sat/formula/Formula.java" />
       </list>
     </option>
   </component>
@@ -212,8 +186,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="23" />
-    <option name="width" value="1282" />
-    <option name="height" value="1002" />
+    <option name="width" value="1368" />
+    <option name="height" value="746" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -285,16 +259,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -310,12 +275,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="ps4-starting" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Problem set 4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -325,6 +297,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Problem set 4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,21 +362,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ps4-starting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Problem set 4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="env" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.21245421" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="FileNameFilter&#9;PSI&#9;JAVA://java.io.FilenameFilter&#10;Logger&#9;PSI&#9;JAVA://java.util.logging.Logger&#10;Number&#9;PSI&#9;JAVA://java.lang.Number&#10;Pair &#9;PSI&#9;JAVA://java.text.EntryPair" />
+    <property name="SearchEverywhereHistoryKey" value="ImmutableList&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/ImmutableList.java&#10;FileNameFilter&#9;PSI&#9;JAVA://java.io.FilenameFilter&#10;Logger&#9;PSI&#9;JAVA://java.util.logging.Logger&#10;Number&#9;PSI&#9;JAVA://java.lang.Number&#10;Pair &#9;PSI&#9;JAVA://java.text.EntryPair" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
   </component>
   <component name="RecentsManager">
@@ -404,19 +403,19 @@
       <recent name="sudoku.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FormulaTest">
-    <configuration default="false" name="SudokuTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClauseTest">
+    <configuration default="false" name="FormulaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ps4-starting" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="sudoku.test" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.test.SudokuTest" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -431,19 +430,71 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="SudokuTest.testFromFiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="FormulaTest.testNot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sudoku.test.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ps4-starting" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="sudoku.test" />
-      <option name="MAIN_CLASS_NAME" value="sudoku.test.SudokuTest" />
-      <option name="METHOD_NAME" value="testFromFiles" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
+      <option name="METHOD_NAME" value="testNot" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FormulaTest.testEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ps4-starting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
+      <option name="METHOD_NAME" value="testEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FormulaTest.testOr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ps4-starting" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
+      <option name="METHOD_NAME" value="testOr" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -483,65 +534,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="FormulaTest.testFormulasConstructors" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ps4-starting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
-      <option name="METHOD_NAME" value="testFormulasConstructors" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="FormulaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ps4-starting" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.FormulaTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -551,7 +551,7 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="PREFERRED_AVD" value="" />
       <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
@@ -559,7 +559,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -584,7 +588,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method />
     </configuration>
@@ -639,27 +647,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -751,34 +738,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
       <setting name="environment" value="" />
       <setting name="specsToExecute" value="" />
@@ -793,27 +752,51 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SudokuTest.testFromFiles" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ClauseTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FormulaTest.testFormulasConstructors" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FormulaTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FormulaTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FormulaTest.testNot" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FormulaTest.testEquals" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FormulaTest.testOr" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ClauseTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.FormulaTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FormulaTest.testFormulasConstructors" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ClauseTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.SudokuTest.testFromFiles" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ClauseTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FormulaTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FormulaTest.testEquals" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FormulaTest.testNot" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FormulaTest.testOr" />
       </list>
     </recent_temporary>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="GAPID_DISABLE_PCS" value="false" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,VISIBILITY_SORTER" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,VISIBILITY_SORTER,SHOW_NON_PUBLIC" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -829,66 +812,79 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FormulaTest - 2017.02.07 at 22h 15m 22s.xml">
+    <history-entry file="ClauseTest - 2017.02.11 at 18h 23m 44s.xml">
+      <configuration name="ClauseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClauseTest - 2017.02.11 at 18h 25m 11s.xml">
+      <configuration name="ClauseTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FormulaTest - 2017.02.11 at 12h 32m 30s.xml">
       <configuration name="FormulaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest_testFormulasConstructors - 2017.02.07 at 22h 09m 36s.xml">
-      <configuration name="FormulaTest.testFormulasConstructors" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 24m 58s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest_testFormulasConstructors - 2017.02.07 at 22h 09m 59s.xml">
-      <configuration name="FormulaTest.testFormulasConstructors" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 27m 22s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FormulaTest_testFormulasConstructors - 2017.02.07 at 22h 15m 18s.xml">
-      <configuration name="FormulaTest.testFormulasConstructors" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 27m 31s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 41m 24s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 27m 54s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 42m 07s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 28m 38s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 52m 32s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 28m 58s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 52m 58s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 55m 41s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuTest_testFromFiles - 2017.02.05 at 23h 55m 57s.xml">
-      <configuration name="SudokuTest.testFromFiles" configurationId="JUnit" />
+    <history-entry file="FormulaTest_testEquals - 2017.02.11 at 12h 29m 49s.xml">
+      <configuration name="FormulaTest.testEquals" configurationId="JUnit" />
     </history-entry>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1282" height="1002" extended-state="6" />
+    <frame x="-1" y="23" width="1368" height="746" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957035" sideWeight="0.5132812" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39703703" sideWeight="0.5132812" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35944363" sideWeight="0.56324583" order="1" side_tool="true" content_ui="tabs" x="104" y="109" width="1166" height="541" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8764769" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42105263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8755556" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41925925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66917294" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36015624" sideWeight="0.5349087" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36015624" sideWeight="0.4650913" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35944363" sideWeight="0.5349087" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35944363" sideWeight="0.43675417" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4178303" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4168975" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36015624" sideWeight="0.5263158" order="6" side_tool="true" content_ui="combo" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36015624" sideWeight="0.5263158" order="1" side_tool="true" content_ui="tabs" x="104" y="109" width="1166" height="541" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004193" sideWeight="0.48671874" order="12" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
@@ -927,13 +923,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sat/formula/Clause.java</url>
+          <line>160</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="in" language="JAVA" />
         <watch expression="Integer.valueOf(row.charAt(i))" language="JAVA" />
         <watch expression="(int) row.charAt(i)" language="JAVA" />
+        <watch expression="c.not()" language="JAVA" />
+        <watch expression="firstInput[i].or(secondInput[i])" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -942,27 +948,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11574">
-          <caret line="643" column="26" selection-start-line="643" selection-start-column="26" selection-end-line="643" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/StrictMath.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11358">
-          <caret line="631" column="32" selection-start-line="631" selection-start-column="32" selection-end-line="631" selection-end-column="32" />
+          <caret line="631" column="32" lean-forward="false" selection-start-line="631" selection-start-column="32" selection-end-line="631" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/FormulaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testFormulasConstructors#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testOr#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testAnd#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testNot#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testEquals#0;class#FormulaTest#0" expanded="true" />
             <element signature="method#testFormulaConstructor#0;class#FormulaTest#0" expanded="true" />
             <element signature="method#make#0;class#FormulaTest#0" expanded="true" />
           </folding>
@@ -972,423 +975,275 @@
     <entry file="file://$PROJECT_DIR$/src/tests/SATSolverTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#Sudoku#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#Sudoku#1;class#Sudoku#0" expanded="false" />
-            <element signature="method#Sudoku#1;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#checkRepresentation#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#checkRepresentation#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#fromFile#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#fromFile#0;class#Sudoku#0" expanded="false" />
-          </folding>
+          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/ClauseTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#987#988#0" expanded="false" />
-            <element signature="e#1006#1007#0" expanded="false" />
-            <element signature="method#testChooseLiteral#0;class#ClauseTest#0" expanded="false" />
-            <element signature="method#makeClause#0;class#ClauseTest#0" expanded="false" />
-          </folding>
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+          <caret line="25" column="36" lean-forward="false" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <caret line="32" column="5" lean-forward="false" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
-          <caret line="100" column="40" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+          <caret line="100" column="40" lean-forward="false" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableListIterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableListMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Boolean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/formula/NegatedLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/text/EntryPair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="497">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <caret line="45" column="12" lean-forward="false" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Number.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/IllegalArgumentException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/StrictMath.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1458">
-          <caret line="631" column="32" selection-start-line="631" selection-start-column="32" selection-end-line="631" selection-end-column="32" />
+          <caret line="631" column="32" lean-forward="false" selection-start-line="631" selection-start-column="32" selection-end-line="631" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/logging/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="217" column="13" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
+          <caret line="217" column="13" lean-forward="false" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/ParseException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="643" column="26" selection-start-line="643" selection-start-column="26" selection-end-line="643" selection-end-column="26" />
+          <caret line="643" column="26" lean-forward="false" selection-start-line="643" selection-start-column="26" selection-end-line="643" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/SATSolverTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/jre/lib/javaws.jar!/com/sun/javaws/exceptions/InvalidArgumentException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="738" column="26" selection-start-line="738" selection-start-column="26" selection-end-line="738" selection-end-column="26" />
+          <caret line="738" column="26" lean-forward="false" selection-start-line="738" selection-start-column="26" selection-end-line="738" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="148" column="13" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
+          <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_easy.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_evil.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_hard.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_hard2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_easy2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/sudoku_4x4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/FilenameFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="686">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-          </folding>
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
-          <caret line="304" column="41" selection-start-line="304" selection-start-column="41" selection-end-line="304" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#Sudoku#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#Sudoku#1;class#Sudoku#0" expanded="false" />
-            <element signature="method#Sudoku#1;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#checkRepresentation#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#checkRepresentation#0;class#Sudoku#0" expanded="false" />
-            <element signature="docComment;method#fromFile#0;class#Sudoku#0" expanded="false" />
-            <element signature="method#fromFile#0;class#Sudoku#0" expanded="false" />
-          </folding>
+          <caret line="304" column="41" lean-forward="false" selection-start-line="304" selection-start-column="41" selection-end-line="304" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#611#612#0" expanded="false" />
-            <element signature="e#639#640#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-            <element signature="e#750#751#0" expanded="false" />
-            <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#testWrongColumnSize#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#testInvalidCellValues#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#testToString#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#testFromFileInvalidBlockSize#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#testFromFiles#0;class#SudokuTest#0" expanded="false" />
-            <element signature="method#readFile#0;class#SudokuTest#0" expanded="false" />
-          </folding>
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Environment#0" expanded="false" />
-            <element signature="e#928#929#0" expanded="false" />
-            <element signature="e#959#960#0" expanded="false" />
-            <element signature="e#985#986#0" expanded="false" />
-            <element signature="e#1039#1040#0" expanded="false" />
-            <element signature="docComment;method#put#0;class#Environment#0" expanded="false" />
-            <element signature="e#1210#1211#0" expanded="false" />
-            <element signature="e#1259#1260#0" expanded="false" />
-            <element signature="docComment;method#putTrue#0;class#Environment#0" expanded="false" />
-            <element signature="e#1434#1435#0" expanded="false" />
-            <element signature="e#1494#1495#0" expanded="false" />
-            <element signature="docComment;method#putFalse#0;class#Environment#0" expanded="false" />
-            <element signature="e#1671#1672#0" expanded="false" />
-            <element signature="e#1732#1733#0" expanded="false" />
-            <element signature="docComment;method#get#0;class#Environment#0" expanded="false" />
-            <element signature="method#get#0;class#Environment#0" expanded="false" />
-            <element signature="e#2028#2029#0" expanded="false" />
-            <element signature="e#2067#2068#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/ClauseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#987#988#0" expanded="false" />
-            <element signature="e#1006#1007#0" expanded="false" />
-            <element signature="method#testChooseLiteral#0;class#ClauseTest#0" expanded="false" />
-            <element signature="method#makeClause#0;class#ClauseTest#0" expanded="false" />
-          </folding>
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/IllegalStateException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/immutable/EmptyImmutableList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="docComment;method#EmptyImmutableList#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="method#add#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="method#remove#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="method#first#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="method#rest#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="method#contains#0;class#EmptyImmutableList#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1179#1180#0" expanded="true" />
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Iterator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Iterable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-          <folding />
+          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
-            <element signature="method#add#0;class#NonEmptyImmutableList#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/formula/PositiveLiteral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#PositiveLiteral#0" expanded="true" />
-            <element signature="e#689#714#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="docComment;method#make#1;class#PositiveLiteral#0" expanded="true" />
-            <element signature="method#make#1;class#PositiveLiteral#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
+            <element signature="method#add#0;class#NonEmptyImmutableList#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1396,65 +1251,72 @@
     <entry file="file://$PROJECT_DIR$/src/sat/env/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/formula/PositiveLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="29" column="34" lean-forward="false" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#PositiveLiteral#0" expanded="false" />
+            <element signature="e#689#714#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#863#864#0" expanded="false" />
+            <element signature="docComment;method#make#1;class#PositiveLiteral#0" expanded="false" />
+            <element signature="method#make#1;class#PositiveLiteral#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar!/org/testng/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="340" column="23" lean-forward="false" selection-start-line="340" selection-start-column="23" selection-end-line="340" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/formula/NegatedLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Literal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="docComment;class#Literal#0" expanded="true" />
-            <element signature="method#checkRep#0;class#Literal#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#1369#1370#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="docComment;method#getVariable#0;class#Literal#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-            <element signature="docComment;method#getNegation#0;class#Literal#0" expanded="true" />
-            <element signature="e#1615#1616#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="docComment;method#negates#0;class#Literal#0" expanded="true" />
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1932#1933#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
+        <state relative-caret-position="1782">
+          <caret line="154" column="8" lean-forward="false" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="8" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
             <element signature="docComment;class#Clause#0" expanded="true" />
             <element signature="method#Clause#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#Clause#1;class#Clause#0" expanded="true" />
-            <element signature="method#Clause#1;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#Clause#2;class#Clause#0" expanded="true" />
             <element signature="method#Clause#2;class#Clause#0" expanded="true" />
-            <element signature="method#checkRep#0;class#Clause#0" expanded="true" />
-            <element signature="method#checkRep#1;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#chooseLiteral#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#isUnit#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#isEmpty#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#size#0;class#Clause#0" expanded="true" />
+            <element signature="method#checkRepresentation#0;class#Clause#0" expanded="true" />
+            <element signature="method#checkRepresentation#1;class#Clause#0" expanded="true" />
             <element signature="docComment;method#contains#0;class#Clause#0" expanded="true" />
             <element signature="docComment;method#add#0;class#Clause#0" expanded="true" />
             <element signature="method#add#0;class#Clause#0" expanded="true" />
             <element signature="docComment;method#merge#0;class#Clause#0" expanded="true" />
             <element signature="method#merge#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#iterator#0;class#Clause#0" expanded="true" />
-            <element signature="docComment;method#reduce#0;class#Clause#0" expanded="true" />
-            <element signature="method#reduce#0;class#Clause#0" expanded="true" />
-            <element signature="method#reduce#1;class#Clause#0" expanded="true" />
+            <element signature="e#5679#5680#0" expanded="true" />
+            <element signature="e#5712#5713#0" expanded="true" />
             <element signature="method#equals#0;class#Clause#0" expanded="true" />
           </folding>
         </state>
@@ -1462,34 +1324,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/FormulaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="918">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testFormulasConstructors#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testOr#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testAnd#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testNot#0;class#FormulaTest#0" expanded="true" />
+            <element signature="method#testEquals#0;class#FormulaTest#0" expanded="true" />
             <element signature="method#testFormulaConstructor#0;class#FormulaTest#0" expanded="true" />
             <element signature="method#make#0;class#FormulaTest#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/ClauseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+            <element signature="method#testChooseLiteral#0;class#ClauseTest#0" expanded="true" />
+            <element signature="method#makeClause#0;class#ClauseTest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="178" column="29" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
+        <state relative-caret-position="324">
+          <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Formula#0" expanded="true" />
+            <element signature="docComment;method#Formula#0;class#Formula#0" expanded="true" />
             <element signature="method#Formula#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#Formula#1;class#Formula#0" expanded="true" />
             <element signature="method#Formula#1;class#Formula#0" expanded="true" />
             <element signature="docComment;method#Formula#2;class#Formula#0" expanded="true" />
             <element signature="method#Formula#2;class#Formula#0" expanded="true" />
             <element signature="method#Formula#3;class#Formula#0" expanded="true" />
+            <element signature="method#Formula#4;class#Formula#0" expanded="true" />
+            <element signature="docComment;method#checkRepresentation#0;class#Formula#0" expanded="true" />
             <element signature="method#checkRepresentation#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#addClause#0;class#Formula#0" expanded="true" />
-            <element signature="method#addClause#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#getClauses#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#iterator#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
@@ -1499,8 +1380,7 @@
             <element signature="docComment;method#not#0;class#Formula#0" expanded="true" />
             <element signature="method#not#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#getSize#0;class#Formula#0" expanded="true" />
-            <element signature="e#4721#4722#0" expanded="true" />
-            <element signature="e#4749#4750#0" expanded="true" />
+            <element signature="method#equals#0;class#Formula#0" expanded="true" />
             <element signature="docComment;method#toString#0;class#Formula#0" expanded="true" />
             <element signature="method#toString#0;class#Formula#0" expanded="true" />
           </folding>
@@ -1564,6 +1444,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

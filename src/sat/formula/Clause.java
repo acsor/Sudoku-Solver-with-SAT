@@ -15,31 +15,19 @@ import java.util.Iterator;
 /**
  * A class for clauses in a CNF representation of a logic formula.
  * A clause is an immutable set of literals that does not contain
- * a literal and its negation.
+ * a literal and its negation. (Note: as of the current implementation, it is not anymore true
+ * that a clause can not contain a variable and its negation.)
  * <p>
- * Note: reduce returns null; a questionable design decision
+ * Note: reduce returns null; a questionable design decision. (Note from the implementor: wow!, we
+ * had the same observation. I was thinking about modifying the code...)
  */
 public class Clause implements Iterable<Literal> {
 
 	private final ImmutableList<Literal> literals;
-	/*
-	 * Rep invariant:
-     *       literals is non null but may be empty 
-     *       contains no duplicate literals
-     *		 contains no literal and its negation
-     *       contains no null elements
-     * 
-     * Abstraction function:
-     *     The list of literals l1,l2,...,ln represents 
-     *     the boolean formula (l1 or l2 or ... or ln)
-     *     
-     *     For example, if the list contains a,b,!c,d, then the
-     *     corresponding formula is (a or b or !c or d).
-     */
 
 	private Clause (ImmutableList<Literal> literals) {
 		this.literals = literals;
-		checkRep();
+		checkRepresentation();
 	}
 
 	/**
@@ -47,29 +35,43 @@ public class Clause implements Iterable<Literal> {
 	 */
 	public Clause (Literal literal) {
 		this(new NonEmptyImmutableList<Literal>(literal));
-		checkRep();
+		checkRepresentation();
 	}
 
 	/**
 	 * @return an empty clause
 	 */
 	public Clause () {
-		this(new EmptyImmutableList<Literal>());
-		checkRep();
+		this(new EmptyImmutableList<>());
+		checkRepresentation();
 	}
 
-	void checkRep () {
+	/**
+	 * Rep invariant:
+	 *       literals is non null but may be empty
+	 *       contains no duplicate literals
+	 *		 contains no literal and its negation
+	 *       contains no null elements
+	 *
+	 * Abstraction function:
+	 *     The list of literals l1, l2, ..., ln represents
+	 *     the boolean formula (l1 or l2 or ... or ln)
+	 *
+	 *     For example, if the list contains a, b, !c, d then the
+	 *     corresponding formula is (a or b or !c or d).
+	 */
+	void checkRepresentation () {
 		// check whether assertions are turned on.
 		// if they're not on, we want to avoid all the recursive
 		// traversal that checkRepresentation(literals) would do.
 		try {
 			assert false;
 		} catch (AssertionError e) {
-			checkRep(literals);
+			checkRepresentation(literals);
 		}
 	}
 
-	void checkRep (ImmutableList<Literal> literals) {
+	void checkRepresentation (ImmutableList<Literal> literals) {
 		assert literals != null : "Clause, Rep invariant: literals non-null";
 
 		if (!literals.isEmpty()) {
@@ -78,9 +80,9 @@ public class Clause implements Iterable<Literal> {
 
 			ImmutableList<Literal> rest = literals.rest();
 			assert !rest.contains(first) : "Clause, Rep invariant: no dups";
-			assert !rest.contains(first.getNegation()) : "Clause, Rep invariant: no literal and its negation";
+			//assert !rest.contains(first.getNegation()) : "Clause, Rep invariant: no literal and its negation";
 
-			checkRep(rest);
+			checkRepresentation(rest);
 		}
 	}
 
@@ -128,34 +130,52 @@ public class Clause implements Iterable<Literal> {
 	/**
 	 * Add a literal to this clause; if already contains the literal's
 	 * negation, return null.
-	 * Requires: l is non-null
+	 * Requires: l is non-null.
 	 *
 	 * @return the new clause with the literal added, or null
 	 */
 	public Clause add (Literal l) {
-		if (literals.contains(l)) return this;
-		if (literals.contains(l.getNegation())) return null;
+		if (literals.contains(l)) {
+			return this;
+		}
+		// if (literals.contains(l.getNegation())) {
+		// 	return null;
+		// }
+
 		return new Clause(literals.add(l));
 	}
 
 	/**
+	 * Negates this disjunction in CNF by returning a conjunction (namely, a Formula instance)
+	 * of its negated literals.
+	 *
+	 * @return a Formula instance containing the negation of this clause.
+	 */
+	public Formula not () {
+		Formula result = new Formula();
+
+		for (Literal l: literals) {
+			result = result.addClause(new Clause(l.getNegation()));
+		}
+
+		return result;
+	}
+
+	/**
 	 * Merge this clause with another clause to obtain a single clause with
-	 * the literals of each. Returns null if a literal appears as positive
+	 * the literals of each. It <b>does not return</b> an empty clause if a literal
+	 * appears as positive
 	 * in one clause and negative in the other. If a literal appears in the
 	 * same polarity in both clauses, just appears once in the result.
-	 * Requires: c is non-null
+	 * Requires: c is non-null.
 	 *
 	 * @return the merge of this clause and c
 	 */
 	public Clause merge (Clause c) {
 		Clause result = this;
 
-		for (Literal l : c) {
+		for (Literal l: c) {
 			result = result.add(l);
-
-			if (result == null) {
-				return null;
-			}
 		}
 
 		return result;
@@ -217,11 +237,15 @@ public class Clause implements Iterable<Literal> {
 
 		Clause c = (Clause) that;
 
-		if (size() != c.size())
+		if (size() != c.size()) {
 			return false;
-		for (Literal l : literals)
-			if (!(c.contains(l)))
+		}
+
+		for (Literal l: literals) {
+			if (!(c.contains(l))) {
 				return false;
+			}
+		}
 
 		return true;
 	}
