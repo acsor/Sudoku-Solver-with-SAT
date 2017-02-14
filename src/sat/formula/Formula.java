@@ -56,16 +56,6 @@ public class Formula implements Iterable<Clause> {
 		checkRepresentation();
 	}
 
-	/**
-	 * Create a new problem for solving that contains a single clause.<br>
-	 *
-	 * @return the problem with a single clause c.
-	 */
-	public Formula (Clause c) {
-		clauses = new NonEmptyImmutableList<>(c);
-		checkRepresentation();
-	}
-
 	public Formula (ImmutableList<Clause> clauses) {
 		this.clauses = clauses;
 		checkRepresentation();
@@ -141,6 +131,7 @@ public class Formula implements Iterable<Clause> {
 	}
 
 	/**
+	 * @param p Formula instance in CNF.
 	 * @return a new problem corresponding to the conjunction of this and p.
 	 */
 	public Formula and (Formula p) {
@@ -155,6 +146,7 @@ public class Formula implements Iterable<Clause> {
 	}
 
 	/**
+	 * @param p Formula instance in CNF.
 	 * @return a new problem corresponding to the disjunction of this and p.
 	 */
 	public Formula or (Formula p) {

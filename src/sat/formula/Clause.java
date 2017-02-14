@@ -23,10 +23,20 @@ import java.util.Iterator;
  */
 public class Clause implements Iterable<Literal> {
 
-	private final ImmutableList<Literal> literals;
+	private ImmutableList<Literal> literals;
 
-	private Clause (ImmutableList<Literal> literals) {
+	public Clause (ImmutableList<Literal> literals) {
 		this.literals = literals;
+		checkRepresentation();
+	}
+
+	public Clause (Literal ... literals) {
+		this.literals = new EmptyImmutableList<>();
+
+		for (Literal l: literals) {
+			this.literals = this.literals.add(l);
+		}
+
 		checkRepresentation();
 	}
 
@@ -34,7 +44,7 @@ public class Clause implements Iterable<Literal> {
 	 * @return a clause contain a single literal
 	 */
 	public Clause (Literal literal) {
-		this(new NonEmptyImmutableList<Literal>(literal));
+		this(new NonEmptyImmutableList<>(literal));
 		checkRepresentation();
 	}
 
@@ -197,8 +207,12 @@ public class Clause implements Iterable<Literal> {
 	 */
 	public Clause reduce (Literal literal) {
 		ImmutableList<Literal> reducedLiterals = reduce(literals, literal);
-		if (reducedLiterals == null) return null;
-		else return new Clause(reducedLiterals);
+
+		if (reducedLiterals == null) {
+			return null;
+		} else {
+			return new Clause(reducedLiterals);
+		}
 	}
 
 	private static ImmutableList<Literal> reduce (ImmutableList<Literal> literals, Literal l) {

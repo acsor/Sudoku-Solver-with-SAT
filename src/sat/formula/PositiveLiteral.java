@@ -46,7 +46,7 @@ public class PositiveLiteral extends Literal {
 			negated.negation = literal;
 			allocatedPosLiterals = allocatedPosLiterals.put(name, literal);
 		}
-		literal.checkRep();
+		literal.checkRepresentation();
 		return literal;
 	}
 

@@ -41,10 +41,10 @@ public class NonEmptyImmutableList<E> implements ImmutableList<E> {
 	}
 
 	public ImmutableList<E> add (E e) {
-		assert e != null : "NonEmptyList.add(null)";
-		return new NonEmptyImmutableList<E>(e, this);
-//        for student experiment        
-//        return new NonEmptyList<E> (e, copy(this));
+		if (e != null) {
+			return new NonEmptyImmutableList<E>(e, this);
+		}
+		return this;
 	}
 
 	public E first () {
@@ -58,7 +58,7 @@ public class NonEmptyImmutableList<E> implements ImmutableList<E> {
 		} else {
 			ImmutableList<E> l = rest.remove(e);
 			if (l == rest) return this;
-			else return new NonEmptyImmutableList<E>(element, l);
+			else return new NonEmptyImmutableList<>(element, l);
 		}
 	}
 
@@ -80,7 +80,7 @@ public class NonEmptyImmutableList<E> implements ImmutableList<E> {
 	}
 
 	public Iterator<E> iterator () {
-		return new ImmutableListIterator<E>(this);
+		return new ImmutableListIterator<>(this);
 	}
 
 
@@ -93,10 +93,21 @@ public class NonEmptyImmutableList<E> implements ImmutableList<E> {
 	 */
 	@Override
 	public boolean equals (Object o) {
-		if (o == this) return true;
-		if (!(o instanceof ImmutableList)) return false;
-		ImmutableList l = (ImmutableList) o;
-		if (l.size() != size()) return false;
+		ImmutableList l;
+
+		if (o == this) {
+			return true;
+		}
+		if (!(o instanceof ImmutableList)) {
+			return false;
+		}
+
+		l = (ImmutableList) o;
+
+		if (l.size() != size()) {
+			return false;
+		}
+
 		return first().equals(l.first()) && rest().equals(l.rest());
 	}
 

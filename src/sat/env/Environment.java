@@ -1,4 +1,4 @@
-/**
+/*
  * Author: dnj
  * Date: Mar 5, 2008, 5:02:48 PM
  * 6.005 Elements of Software Construction
@@ -37,8 +37,8 @@ public class Environment {
 	}
 
 	/**
-	 * @return a new environment in which l has the value b
-	 * if a binding for l already exists, overwrites it
+	 * @return a new environment in which l has the value b.<br>
+	 * If a binding for l already exists, overwrites it.
 	 */
 	public Environment put (Variable v, Boolean b) {
 		return new Environment(bindings.put(v, b));
@@ -62,7 +62,7 @@ public class Environment {
 
 	/**
 	 * @return the boolean value that l is bound to, or
-	 * the special UNDEFINED value of it is not bound
+	 * the special UNDEFINED value if it is not bound
 	 */
 	public Boolean get (Variable v) {
 		final Boolean b = bindings.get(v);

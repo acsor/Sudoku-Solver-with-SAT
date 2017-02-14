@@ -33,7 +33,7 @@ public abstract class Literal {
 	 *    if this is an instance of PositiveLiteral, then represents the literal var
 	 *    if this is an instance of NegatedLiteral, then represents the literal !var
 	 */
-	void checkRep () {
+	protected void checkRepresentation () {
 		assert this.getNegation().getNegation() == this : "Variable, Rep invariant: negation of negation";
 		assert this.getNegation().var.getName().equals(var.getName()) : "Variable, Rep invariant: names match";
 	}
@@ -67,7 +67,7 @@ public abstract class Literal {
 		return this.negation == literal;
 	}
 
-	// Same as Object.equals, but must override bool.Variable.equals
+	// Same as Object.equals, but must override toPlatformBoolean.Variable.equals
 	@Override
 	public boolean equals (Object o) {
 		return this == o;

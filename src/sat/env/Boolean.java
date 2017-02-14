@@ -32,4 +32,11 @@ public enum Boolean {
 		return UNDEFINED;
 	}
 
+	public static Boolean toPlatformBoolean (boolean b) {
+		if (b) {
+			return TRUE;
+		}
+		return FALSE;
+	}
+
 }

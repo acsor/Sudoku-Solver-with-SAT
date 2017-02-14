@@ -1,4 +1,4 @@
-/**
+/*
  * Author: dnj
  * Date: Mar 5, 2008, 8:15:32 PM
  * 6.005 Elements of Software Construction

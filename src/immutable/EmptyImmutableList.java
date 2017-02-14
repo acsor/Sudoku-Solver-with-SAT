@@ -20,8 +20,10 @@ public class EmptyImmutableList<E> implements ImmutableList<E> {
 	}
 
 	public ImmutableList<E> add (E e) {
-		assert e != null : "EmptyList.add(null)";
-		return new NonEmptyImmutableList<E>(e);
+		if (e != null) {
+			return new NonEmptyImmutableList<E>(e);
+		}
+		return this;
 	}
 
 	public ImmutableList<E> remove (E e) {
