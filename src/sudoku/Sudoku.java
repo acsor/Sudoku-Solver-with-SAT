@@ -1,4 +1,4 @@
-/**
+/*
  * Author: dnj, Hank Huang
  * Date: March 7, 2009
  * 6.005 Elements of Software Construction
@@ -6,7 +6,6 @@
  */
 package sudoku;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import sat.env.Environment;
 import sat.env.Variable;
 import sat.formula.Formula;
@@ -15,6 +14,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static sat.env.Boolean.TRUE;
+
 /**
  * Sudoku is an immutable abstract datatype representing instances of Sudoku.
  * Each object is a partially completed Sudoku puzzle.
@@ -22,6 +23,7 @@ import java.util.Scanner;
 public class Sudoku {
 
 	private static final String VAL_EMPTY_CELL_REP = ".";
+	private static final String DELIM_OCCUPIES = "-";
 
 	public static final int VAL_MIN_CELL = 0;
 	public static final int VAL_MAX_CELL = 9;
@@ -55,8 +57,7 @@ public class Sudoku {
 	private final int[][] squares;
 
 	// occupies [i,j,k] means that kth symbol occupies entry in row i, column j
-	//private final Variable[][][] occupies;
-	private int[][] selectedSymbol;
+	private Variable[][][] occupies;
 
 	/**
 	 * Create an empty Sudoku puzzle of blockSize blockSize.
@@ -75,6 +76,7 @@ public class Sudoku {
 		}
 
 		checkRepresentation();
+		initializeOccupies();
 	}
 
 	/**
@@ -105,6 +107,7 @@ public class Sudoku {
 		size = (int) Math.pow(blockSize, 2);
 
 		checkRepresentation();
+		initializeOccupies();
 	}
 
 	/**
@@ -161,6 +164,19 @@ public class Sudoku {
 									row, column, VAL_MIN_CELL, VAL_MAX_CELL, squares[row][column]
 							)
 					);
+				}
+			}
+		}
+	}
+
+	private void initializeOccupies () {
+		occupies = new Variable[size][size][VAL_MAX_CELL];
+
+		for (int row = 0; row < squares.length; row++) {
+			for (int column = 0; column < squares[row].length; column++) {
+				if (squares[row][column] != VAL_EMPTY_CELL) {
+					occupies[row][column][squares[row][column] - 1] =
+						getOccupies(row, column, squares[row][column]);
 				}
 			}
 		}
@@ -230,21 +246,15 @@ public class Sudoku {
 		return new Sudoku(blockSize, cells);
 	}
 
-	public Variable occupies (int row, int column, int value) {
-		final Variable result = new Variable(
-				String.format("%d%d%d", row, column, value)
-		);
-
-		return result;
-	}
-
 	/**
-	 * Produce readable string representation of this Sukoku grid, e.g. for a 4
-	 * x 4 sudoku problem:
-	 * 12.4
-	 * 3412
-	 * 2.43
-	 * 4321
+	 * <p>
+	 * 		Produce readable string representation of this Sukoku grid, e.g. for a 4
+	 * 		x 4 sudoku problem:<br>
+	 * 		12.4<br>
+	 * 		3412<br>
+	 * 		2.43<br>
+	 * 		4321<br>
+	 * </p>
 	 *
 	 * @return a string corresponding to this grid
 	 */
@@ -285,8 +295,19 @@ public class Sudoku {
 	 * blank entries.
 	 */
 	public Sudoku interpretSolution (Environment e) {
-		// TODO: implement this.
-		throw new RuntimeException("not yet implemented.");
+		final Sudoku solution = new Sudoku(blockSize, squares);
+
+		for (int row = 0; row < solution.squares.length; row++) {
+			for (int column = 0; column < solution.squares[row].length; column++) {
+				for (int value = 1; value < VAL_MAX_CELL; value++) {
+					if (e.get(getOccupies(row, column, value)) == TRUE) {
+						solution.squares[row][column] = value;
+					}
+				}
+			}
+		}
+
+		return solution;
 	}
 
 	private static int[] stringToIntCellArray (String row) throws ParseException {
@@ -313,5 +334,43 @@ public class Sudoku {
 
 		return result;
 	}
+
+	private Variable getOccupies (int row, int column, int value) {
+		if (value < VAL_MIN_CELL || value > VAL_MAX_CELL) {
+			throw new IllegalStateException(
+					String.format(
+							"Value (%d) must be comprised between %d and %d",
+							value, VAL_MIN_CELL, VAL_MAX_CELL
+					)
+			);
+		}
+		if (row < 0 || row > squares.length) {
+			throw new IllegalStateException(
+					String.format(
+							"row (%d) is less than 0 or greater than %d",
+							row, squares.length
+					)
+			);
+		}
+		if (column < 0 || column > squares[row].length) {
+			throw new IllegalStateException(
+					String.format(
+							"column (%d) is less than 0 or greater than %d",
+							column, squares[row].length
+					)
+			);
+		}
+
+		return new Variable(
+				String.join(
+						DELIM_OCCUPIES,
+						String.valueOf(row),
+						String.valueOf(column),
+						String.valueOf(value)
+				)
+		);
+	}
+
+
 
 }

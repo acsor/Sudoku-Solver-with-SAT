@@ -66,8 +66,8 @@ public class SudokuTest {
 			cells[i] = new int[size];
 		}
 
-		cells[0][4] = 12;
 		cells[4][0] = -3;
+		cells[0][4] = 12;
 
 		new Sudoku(blockSize, cells);
 	}
@@ -115,7 +115,7 @@ public class SudokuTest {
 					s = Sudoku.fromFile(3, f.getPath());
 
 					// System.out.println(s);
-					// System.out.println(readFile(f.getPath()));
+					// System.out.println(readFile(f));
 
 					Assert.assertEquals(
 							s.toString(),
