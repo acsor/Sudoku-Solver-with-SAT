@@ -91,9 +91,14 @@ public class SATSolver {
 	private static Clause findShortestClause (ImmutableList<Clause> clauses) {
 		Clause result = clauses.first();
 
-		for (Clause c: clauses.rest()) {
-			if (c.size() < result.size()) {
-				result = c;
+		if (result.size() != 1) {
+			for (Clause c: clauses.rest()) {
+				if (c.size() < result.size()) {
+					result = c;
+				}
+				if (result.size() == 1) { // We cannot get a shorter clause
+					break;
+				}
 			}
 		}
 

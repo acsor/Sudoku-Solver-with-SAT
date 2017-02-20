@@ -97,7 +97,7 @@ public class SudokuTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromFileInvalidBlockSize () throws IOException, ParseException {
 		final String fileName = "samples/sudoku_evil.txt";
-		Sudoku.fromFile(Sudoku.VAL_MAX_BLOCK_SIZE + 1, fileName);
+		Sudoku.fromFile(Sudoku.CONST_MAX_BLOCK_SIZE + 1, fileName);
 	}
 
 	@Test
