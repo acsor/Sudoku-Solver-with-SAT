@@ -15,6 +15,7 @@ import sat.formula.PositiveLiteral;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static sat.env.Boolean.TRUE;
@@ -243,6 +244,39 @@ public class Sudoku {
 
 		//The representation will be checked automatically by the Sudoku constructor
 		return new Sudoku(blockSize, cells);
+	}
+
+	public SudokuCell getCellByBlock (int block, int i) {
+		int row = Math.floorDiv(block, blockSize) * blockSize + Math.floorDiv(i, blockSize),
+			column = (block % blockSize) * blockSize + (i % blockSize);
+
+		return new SudokuCell(
+				row,
+				column,
+				squares[row][column]
+		);
+	}
+
+	@Override
+	public boolean equals (Object another) {
+		final Sudoku a;
+
+		if (!(another instanceof Sudoku)) {
+			return false;
+		}
+		if (this == another) {
+			return true;
+		}
+
+		a = (Sudoku) another;
+
+		for (int row = 0; row < squares.length; row++) {
+			if (!Arrays.equals(squares[row], a.squares[row])) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**

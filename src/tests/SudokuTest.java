@@ -127,8 +127,27 @@ public class SudokuTest {
 	}
 
 	@Test
-	public void testBlockCells () throws IOException, ParseException {
-    	final Sudoku s = Sudoku.fromFile(3, "samples/sudoku_evil.txt");
+	public void testGetCellByBlock () throws IOException, ParseException {
+    	final int blockSize = 3, blockSizePow = (int) Math.pow(blockSize, 2);
+    	final Sudoku expected = Sudoku.fromFile(blockSize, "samples/sudoku_evil.txt");
+    	final Sudoku actual;
+
+    	final int[][] actualSquares = new int[blockSizePow][blockSizePow];
+    	Sudoku.SudokuCell tempCell;
+
+		for (int b = 0; b < blockSizePow; b++) {
+			for (int c = 0; c < blockSizePow; c++) {
+				tempCell = expected.getCellByBlock(b, c);
+				actualSquares[tempCell.row][tempCell.column] = tempCell.value;
+			}
+		}
+
+		actual = new Sudoku(blockSize, actualSquares);
+
+		Assert.assertEquals(
+				expected,
+				actual
+		);
 	}
 
 	private String readFile (File file) throws FileNotFoundException {
