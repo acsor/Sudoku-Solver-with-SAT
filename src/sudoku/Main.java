@@ -13,13 +13,13 @@ public class Main {
 	 */
 	public static void main (String[] args) {
 		// timedSolve(new Sudoku(2));
-        timedSolve (new Sudoku(2, new int[][] {
-                    new int[] { 0, 1, 0, 4 },
-                    new int[] { 0, 0, 0, 0 },
-                    new int[] { 2, 0, 3, 0 },
-                    new int[] { 0, 0, 0, 0 },
-		}));
-//        timedSolveFromFile(3, "samples/sudoku_easy.txt");
+        // timedSolve (new Sudoku(2, new int[][] {
+        //             new int[] { 0, 1, 0, 4 },
+        //             new int[] { 0, 0, 0, 0 },
+        //             new int[] { 2, 0, 3, 0 },
+        //             new int[] { 0, 0, 0, 0 },
+		// }));
+        timedSolveFromFile(3, "samples/sudoku_easy.txt");
 //        timedSolveFromFile(3, "samples/sudoku_hard.txt");        
 	}
 

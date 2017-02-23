@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3edeab4a-07b0-4295-862f-85b653a5e2fa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sat/SATSolver.java" afterPath="$PROJECT_DIR$/src/sat/SATSolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sudoku/Main.java" afterPath="$PROJECT_DIR$/src/sudoku/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sudoku/Sudoku.java" afterPath="$PROJECT_DIR$/src/sudoku/Sudoku.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/SudokuTest.java" afterPath="$PROJECT_DIR$/src/tests/SudokuTest.java" />
@@ -47,108 +46,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="414">
+              <caret line="286" column="18" lean-forward="false" selection-start-line="286" selection-start-column="18" selection-end-line="286" selection-end-column="18" />
               <folding>
-                <element signature="e#0#17201#0" expanded="true" />
+                <element signature="e#0#18101#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="true" />
+                <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#Sudoku#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#Sudoku#1;class#Sudoku#0" expanded="true" />
-                <element signature="method#initializeOccupies#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#fromFile#0;class#Sudoku#0" expanded="true" />
+                <element signature="docComment;method#toString#0;class#Sudoku#0" expanded="true" />
                 <element signature="class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#getProblem#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#exactlyOncePerRow#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#exactlyOncePerColumn#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#exactlyOncePerBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="docComment;method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;method#interpretSolution#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#interpretSolution#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#variableFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="class#SudokuCell#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#SudokuCell#0;class#SudokuCell#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#SudokuCell#1;class#SudokuCell#0;class#Sudoku#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sudoku/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+            <state relative-caret-position="133">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Main#0" expanded="true" />
                 <element signature="docComment;method#timedSolve#0;class#Main#0" expanded="true" />
-                <element signature="method#timedSolve#0;class#Main#0" expanded="true" />
                 <element signature="docComment;method#timedSolveFromFile#0;class#Main#0" expanded="true" />
                 <element signature="method#timedSolveFromFile#0;class#Main#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PositiveLiteral.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sat/formula/PositiveLiteral.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-              <folding>
-                <element signature="e#758#759#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#863#864#0" expanded="true" />
-                <element signature="method#make#1;class#PositiveLiteral#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Environment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sat/env/Environment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#2077#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="docComment;class#Environment#0" expanded="false" />
-                <element signature="e#927#928#0" expanded="false" />
-                <element signature="e#958#959#0" expanded="false" />
-                <element signature="e#984#985#0" expanded="false" />
-                <element signature="e#1038#1039#0" expanded="false" />
-                <element signature="docComment;method#put#0;class#Environment#0" expanded="false" />
-                <element signature="e#1215#1216#0" expanded="false" />
-                <element signature="e#1264#1265#0" expanded="false" />
-                <element signature="docComment;method#putTrue#0;class#Environment#0" expanded="false" />
-                <element signature="e#1439#1440#0" expanded="false" />
-                <element signature="e#1499#1500#0" expanded="false" />
-                <element signature="docComment;method#putFalse#0;class#Environment#0" expanded="false" />
-                <element signature="e#1676#1677#0" expanded="false" />
-                <element signature="e#1737#1738#0" expanded="false" />
-                <element signature="docComment;method#get#0;class#Environment#0" expanded="false" />
-                <element signature="method#get#0;class#Environment#0" expanded="false" />
-                <element signature="e#2033#2034#0" expanded="false" />
-                <element signature="e#2072#2073#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Formula.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#Formula#0" expanded="true" />
-                <element signature="method#Formula#0;class#Formula#0" expanded="true" />
-                <element signature="method#Formula#3;class#Formula#0" expanded="true" />
-                <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
-                <element signature="docComment;method#or#0;class#Formula#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,8 +93,8 @@
       <file leaf-file-name="SudokuTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="130" column="66" lean-forward="false" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="true" />
@@ -223,10 +159,10 @@
         <option value="$PROJECT_DIR$/src/sat/env/Boolean.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/Formula.java" />
         <option value="$PROJECT_DIR$/src/tests/SATSolverTest.java" />
-        <option value="$PROJECT_DIR$/src/tests/SudokuTest.java" />
         <option value="$PROJECT_DIR$/src/sat/SATSolver.java" />
-        <option value="$PROJECT_DIR$/src/sudoku/Main.java" />
+        <option value="$PROJECT_DIR$/src/tests/SudokuTest.java" />
         <option value="$PROJECT_DIR$/src/sudoku/Sudoku.java" />
+        <option value="$PROJECT_DIR$/src/sudoku/Main.java" />
       </list>
     </option>
   </component>
@@ -322,8 +258,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -448,6 +384,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ps4-starting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Problem set 4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="samples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -462,7 +412,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="Environ&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Environment.java&#10;Boolean&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Boolean.java&#10;Variabl&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Variable.java&#10;Negated&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/formula/NegatedLiteral.java&#10;Immutable&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/NonEmptyImmutableList.java&#10;ImmutableList&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/ImmutableList.java&#10;FileNameFilter&#9;PSI&#9;JAVA://java.io.FilenameFilter&#10;Logger&#9;PSI&#9;JAVA://java.util.logging.Logger&#10;Number&#9;PSI&#9;JAVA://java.lang.Number&#10;Pair &#9;PSI&#9;JAVA://java.text.EntryPair" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
-    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -914,39 +863,39 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1368" height="746" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32825485" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.396348" sideWeight="0.5132812" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.5731343" order="1" side_tool="true" content_ui="tabs" x="104" y="109" width="1166" height="541" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8740741" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8739255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5748148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66618913" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66618913" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.5803324" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.4196676" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.58518517" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.4148148" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36015624" sideWeight="0.5263158" order="6" side_tool="true" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41615543" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5777096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4004193" sideWeight="0.48671874" order="12" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3243824" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -983,9 +932,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sudoku/Main.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="17" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="f.getSize()" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1115,13 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="148" column="13" lean-forward="false" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/sudoku_easy.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1283,13 +1237,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#910#0" expanded="false" />
-            <element signature="docComment;class#Variable#0" expanded="false" />
-            <element signature="e#513#514#0" expanded="false" />
-            <element signature="docComment;method#equals#0;class#Variable#0" expanded="false" />
-            <element signature="method#equals#0;class#Variable#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1304,13 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Formula#0" expanded="true" />
-            <element signature="method#Formula#0;class#Formula#0" expanded="true" />
-            <element signature="method#Formula#3;class#Formula#0" expanded="true" />
-            <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
-            <element signature="docComment;method#or#0;class#Formula#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1318,28 +1258,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#2077#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#Environment#0" expanded="false" />
-            <element signature="e#927#928#0" expanded="false" />
-            <element signature="e#958#959#0" expanded="false" />
-            <element signature="e#984#985#0" expanded="false" />
-            <element signature="e#1038#1039#0" expanded="false" />
-            <element signature="docComment;method#put#0;class#Environment#0" expanded="false" />
-            <element signature="e#1215#1216#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-            <element signature="docComment;method#putTrue#0;class#Environment#0" expanded="false" />
-            <element signature="e#1439#1440#0" expanded="false" />
-            <element signature="e#1499#1500#0" expanded="false" />
-            <element signature="docComment;method#putFalse#0;class#Environment#0" expanded="false" />
-            <element signature="e#1676#1677#0" expanded="false" />
-            <element signature="e#1737#1738#0" expanded="false" />
-            <element signature="docComment;method#get#0;class#Environment#0" expanded="false" />
-            <element signature="method#get#0;class#Environment#0" expanded="false" />
-            <element signature="e#2033#2034#0" expanded="false" />
-            <element signature="e#2072#2073#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,10 +1294,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="324">
+          <caret line="130" column="66" lean-forward="false" selection-start-line="130" selection-start-column="66" selection-end-line="130" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="true" />
@@ -1392,52 +1318,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
+    <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
+        <state relative-caret-position="414">
+          <caret line="286" column="18" lean-forward="false" selection-start-line="286" selection-start-column="18" selection-end-line="286" selection-end-column="18" />
           <folding>
-            <element signature="method#add#0;class#Clause#0" expanded="true" />
+            <element signature="e#0#18101#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Sudoku#0" expanded="true" />
+            <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="true" />
+            <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#Sudoku#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#Sudoku#1;class#Sudoku#0" expanded="true" />
+            <element signature="docComment;method#toString#0;class#Sudoku#0" expanded="true" />
+            <element signature="class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#exactlyOncePerBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="docComment;method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="docComment;method#interpretSolution#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#variableFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="class#SudokuCell#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#SudokuCell#0;class#SudokuCell#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#SudokuCell#1;class#SudokuCell#0;class#Sudoku#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/sudoku_easy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        <state relative-caret-position="133">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Main#0" expanded="true" />
             <element signature="docComment;method#timedSolve#0;class#Main#0" expanded="true" />
-            <element signature="method#timedSolve#0;class#Main#0" expanded="true" />
             <element signature="docComment;method#timedSolveFromFile#0;class#Main#0" expanded="true" />
             <element signature="method#timedSolveFromFile#0;class#Main#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="66" column="5" lean-forward="false" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#17201#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Sudoku#0" expanded="true" />
-            <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#Sudoku#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#Sudoku#1;class#Sudoku#0" expanded="true" />
-            <element signature="method#initializeOccupies#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#fromFile#0;class#Sudoku#0" expanded="true" />
-            <element signature="class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#getProblem#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#exactlyOncePerRow#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#exactlyOncePerColumn#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#exactlyOncePerBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="docComment;method#interpretSolution#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#interpretSolution#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#variableFactory#0;class#Sudoku#0" expanded="true" />
           </folding>
         </state>
       </provider>

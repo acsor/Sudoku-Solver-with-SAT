@@ -175,7 +175,7 @@ public class Sudoku {
 			for (int column = 0; column < squares[row].length; column++) {
 				if (squares[row][column] != CONST_EMPTY_CELL) {
 					occupies[row][column][squares[row][column] - 1] =
-						variableFactory(row, column, squares[row][column]);
+							variableFactory(row, column, squares[row][column]);
 				}
 			}
 		}
@@ -286,7 +286,7 @@ public class Sudoku {
 
 	private class ProblemFactory {
 
-		Formula getProblem () {
+		public Formula getProblem () {
 			Formula result = new Formula();
 
 			result = loadFromGrid(result);
@@ -399,7 +399,9 @@ public class Sudoku {
 				f = f.addClause(atLeastOnce);
 			}
 
-			//The code below guarantees that each valid value k does not appear more than once in every column c.
+			/* The code below guarantees that each valid value k does not appear more than once in every column c.
+			The number of columns to iterate on is based on the number of "columns" or cells contained within the
+			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
 				atMostOnce = new Clause();
 
@@ -422,6 +424,7 @@ public class Sudoku {
 		private Formula exactlyOncePerBlock (Formula f) {
 			Clause atLeastOnce, atMostOnce;
 			int rowFactor, columnFactor;
+			SudokuCell first, second;
 
 			//The code below guarantees that each value k is present at least once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
@@ -451,12 +454,16 @@ public class Sudoku {
 			//The code below guarantees that each value k is present at most once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
 				atMostOnce = new Clause();
-				rowFactor = block / blockSize;
-				columnFactor = block % blockSize;
 
 				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
-					for (int row = 0; row < blockSize; row++) { //For every row in the current block:
-						for (int column = 0; column < blockSize; column++) { //For every column in the current block:
+					for (int firstCell = 0; firstCell < Math.pow(blockSize, 2); firstCell++) {
+						for (int secondCell = firstCell + 1; secondCell < Math.pow(blockSize, 2); secondCell++) {
+							first = getCellByBlock(block, firstCell);
+							second = getCellByBlock(block, secondCell);
+
+							atMostOnce = atMostOnce
+									.add(NegatedLiteral.make(variableFactory(first.row, first.column, value)))
+									.add(NegatedLiteral.make(variableFactory(second.row, second.column, value)));
 						}
 					}
 				}
@@ -467,20 +474,17 @@ public class Sudoku {
 			return f;
 		}
 
-		private int minColumnLength (Formula f) {
-			int result = -1;
-
-			if (squares.length > 0) {
-				result = squares[0].length;
-
-				for (int i = 1; i < squares.length; i++) {
-					if (result < squares[i].length) {
-						result = squares[i].length;
-					}
-				}
-			}
-
-			return result;
+		/**
+		 *
+		 * @param block the block for which we want to obtain a cell.
+		 * @param i the index of the ith cell we want to retrieve.
+		 * @return a SudokuCell with its {@code value} attribute set to null.
+		 */
+		private SudokuCell getCellByBlock (int block, int i) {
+			return new SudokuCell(
+					Math.floorDiv(block, blockSize) * blockSize + Math.floorDiv(i, blockSize),
+					(block % blockSize) * blockSize + (i % blockSize)
+			);
 		}
 
 	}
@@ -568,6 +572,24 @@ public class Sudoku {
 						String.valueOf(value)
 				)
 		);
+	}
+
+	public static class SudokuCell {
+
+		public final Integer row, column, value;
+
+		public SudokuCell (int row, int column) {
+			this.row = row;
+			this.column = column;
+			this.value = null;
+		}
+
+		public SudokuCell (int row, int column, int value) {
+			this.row = row;
+			this.column = column;
+			this.value = value;
+		}
+
 	}
 
 }

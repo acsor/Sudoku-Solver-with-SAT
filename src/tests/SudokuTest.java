@@ -126,6 +126,11 @@ public class SudokuTest {
 		}
 	}
 
+	@Test
+	public void testBlockCells () throws IOException, ParseException {
+    	final Sudoku s = Sudoku.fromFile(3, "samples/sudoku_evil.txt");
+	}
+
 	private String readFile (File file) throws FileNotFoundException {
 		Scanner in = null;
 		final StringBuilder b = new StringBuilder();
