@@ -29,6 +29,11 @@ public class Sudoku {
 	private static final String CONST_EMPTY_CELL_REP = ".";
 	private static final String DELIM_OCCUPIES = ",";
 
+	/**
+	 * The least valid value within every cell of the Sudoku.<br>
+	 * A value of {@code CONST_MIN_CELL} (or equivalently {@code CONST_EMPTY_CELL})
+	 * is reserved for empty cells.
+	 */
 	public static final int CONST_MIN_CELL = 0;
 	public static final int CONST_MIN_VALID_CELL = 1;
 	public static final int CONST_MAX_CELL = 9;
@@ -358,7 +363,7 @@ public class Sudoku {
 
 					for (int first = CONST_MIN_VALID_CELL; first <= CONST_MAX_CELL; first++) {
 						for (int second = first + 1; second <= CONST_MAX_CELL; second++) {
-							f = f.addClause (
+							f = f.addClause(
 									new Clause(
 											NegatedLiteral.make(variableFactory(row, column, first)),
 											NegatedLiteral.make(variableFactory(row, column, second))
@@ -378,9 +383,9 @@ public class Sudoku {
 
 			//The code below will guarantee that a certain digit k will appear at least once in every row r.
 			for (int row = 0; row < squares.length; row++) {
-				atLeastOnce = new Clause();
-
 				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+					atLeastOnce = new Clause();
+
 					for (int column = 0; column < squares[row].length; column++) {
 						atLeastOnce = atLeastOnce.add(
 								PositiveLiteral.make(
@@ -388,26 +393,23 @@ public class Sudoku {
 								)
 						);
 					}
-				}
 
-				f = f.addClause(atLeastOnce);
+					f = f.addClause(atLeastOnce);
+				}
 			}
 
 			//The code below will guarantee that every valid digit k does not appear more than once in a given row r.
 			for (int row = 0; row < squares.length; row++) {
-				atMostOnce = new Clause();
-
 				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
 					for (int firstCol = 0; firstCol < squares[row].length; firstCol++) {
 						for (int secondCol = firstCol + 1; secondCol < squares[row].length; secondCol++) {
-							atMostOnce = atMostOnce
+							atMostOnce = new Clause()
 									.add(NegatedLiteral.make(variableFactory(row, firstCol, value)))
 									.add(NegatedLiteral.make(variableFactory(row, secondCol, value)));
+							f = f.addClause(atMostOnce);
 						}
 					}
 				}
-
-				f = f.addClause(atMostOnce);
 			}
 
 			return f;
@@ -416,11 +418,13 @@ public class Sudoku {
 		private Formula exactlyOncePerColumn (Formula f) {
 			Clause atLeastOnce, atMostOnce;
 
-			//The code below guarantees that each valid value k appear at least once in every column c.
+			/* The code below guarantees that each valid value k appear at least once in every column c.
+			The number of columns to iterate on is based on the number of "columns" or cells contained within the
+			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
-				atLeastOnce = new Clause();
-
 				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+					atLeastOnce = new Clause();
+
 					for (int row = 0; row < squares.length; row++) {
 						atLeastOnce = atLeastOnce.add(
 								PositiveLiteral.make(
@@ -428,28 +432,25 @@ public class Sudoku {
 								)
 						);
 					}
-				}
 
-				f = f.addClause(atLeastOnce);
+					f = f.addClause(atLeastOnce);
+				}
 			}
 
 			/* The code below guarantees that each valid value k does not appear more than once in every column c.
 			The number of columns to iterate on is based on the number of "columns" or cells contained within the
 			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
-				atMostOnce = new Clause();
-
 				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
 					for (int firstRow = 0; firstRow < squares.length; firstRow++) {
 						for (int secondRow = firstRow + 1; secondRow < squares.length; secondRow++) {
-							atMostOnce = atMostOnce
+							atMostOnce = new Clause()
 									.add(NegatedLiteral.make(variableFactory(firstRow, column, value)))
 									.add(NegatedLiteral.make(variableFactory(secondRow, column, value)));
+							f = f.addClause(atMostOnce);
 						}
 					}
 				}
-
-				f = f.addClause(atMostOnce);
 			}
 
 			return f;
@@ -457,52 +458,42 @@ public class Sudoku {
 
 		private Formula exactlyOncePerBlock (Formula f) {
 			Clause atLeastOnce, atMostOnce;
-			int rowFactor, columnFactor;
+			SudokuCell cell;
 			SudokuCell first, second;
 
 			//The code below guarantees that each value k is present at least once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
-				atLeastOnce = new Clause();
-				rowFactor = block / blockSize;
-				columnFactor = block % blockSize;
+				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
+					atLeastOnce = new Clause();
 
-				for (int row = 0; row < blockSize; row++) { //For every row in the current block:
-					for (int column = 0; column < blockSize; column++) { //For every column in the current block:
-						for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
-							atLeastOnce = atLeastOnce.add(
-									PositiveLiteral.make(
-											variableFactory(
-													row + rowFactor * blockSize,
-													column + columnFactor * blockSize,
-													value
-											)
-									)
-							);
-						}
+					//For every cell in block block:
+					for (int cellIndex = 0; cellIndex < Math.pow(blockSize, 2); cellIndex++) {
+						cell = getCellByBlock(block, cellIndex);
+						atLeastOnce = atLeastOnce
+								.add(
+										PositiveLiteral.make(variableFactory(cell.row, cell.column, value))
+								);
 					}
-				}
 
-				f = f.addClause(atLeastOnce);
+					f = f.addClause(atLeastOnce);
+				}
 			}
 
 			//The code below guarantees that each value k is present at most once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
-				atMostOnce = new Clause();
-
 				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
 					for (int firstCell = 0; firstCell < Math.pow(blockSize, 2); firstCell++) {
 						for (int secondCell = firstCell + 1; secondCell < Math.pow(blockSize, 2); secondCell++) {
-							first = getCellByBlock(block, firstCell);
-							second = getCellByBlock(block, secondCell);
+							first = this.getCellByBlock(block, firstCell);
+							second = this.getCellByBlock(block, secondCell);
 
-							atMostOnce = atMostOnce
+							atMostOnce = new Clause()
 									.add(NegatedLiteral.make(variableFactory(first.row, first.column, value)))
 									.add(NegatedLiteral.make(variableFactory(second.row, second.column, value)));
+							f = f.addClause(atMostOnce);
 						}
 					}
 				}
-
-				f = f.addClause(atMostOnce);
 			}
 
 			return f;
@@ -537,7 +528,7 @@ public class Sudoku {
 		for (int row = 0; row < solution.squares.length; row++) {
 			for (int column = 0; column < solution.squares[row].length; column++) {
 				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
-					if (e.get(variableFactory(row, column, value)) == TRUE) {
+					if (solution.squares[row][column] == CONST_EMPTY_CELL && e.get(variableFactory(row, column, value)) == TRUE) {
 						solution.squares[row][column] = value;
 					}
 				}

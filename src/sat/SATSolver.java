@@ -10,6 +10,8 @@ import sat.formula.*;
  */
 public class SATSolver {
 
+	private static Clause CONST_CLAUSE_EMPTY = new Clause();
+
 	/**
 	 * Solve the problem using a simple version of DPLL with backtracking and
 	 * unit propagation. The returned environment binds literals of class
@@ -46,7 +48,7 @@ public class SATSolver {
 
 		if (clauses.isEmpty()) {
 			return env;
-		} if (clauses.contains(new Clause())) { //If clauses contains an empty clause:
+		} if (clauses.contains(CONST_CLAUSE_EMPTY)) { //If clauses contains an empty clause:
 			return null;
 		}
 
@@ -96,8 +98,8 @@ public class SATSolver {
 				if (c.size() < result.size()) {
 					result = c;
 				}
-				if (result.size() == 1) { // We cannot get a shorter clause
-					break;
+				if (result.size() == 1) { // We cannot find a shorter clause
+					return result;
 				}
 			}
 		}

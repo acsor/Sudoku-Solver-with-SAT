@@ -20,7 +20,7 @@ public class Main {
         //             new int[] { 0, 0, 0, 0 },
 		// }));
         timedSolveFromFile(3, "samples/sudoku_easy.txt");
-//        timedSolveFromFile(3, "samples/sudoku_hard.txt");        
+        //timedSolveFromFile(3, "samples/sudoku_hard.txt");
 	}
 
 	/**

@@ -67,8 +67,18 @@ public class NonEmptyImmutableList<E> implements ImmutableList<E> {
 	}
 
 	public boolean contains (E e) {
-		assert e != null : "NonEmptyList.contains(null)";
-		return element.equals(e) || rest.contains(e);
+		//Re-implemented this method because on large inputs its previous recursive implementation
+		//generated stack overflows.
+		assert e != null : "NonEmptyImmutableList.contains(null)";
+
+		for (E i: this) {
+			if (i.equals(e)) {
+				return true;
+			}
+		}
+
+		//return element.equals(e) || rest.contains(e);
+		return false;
 	}
 
 	public int size () {

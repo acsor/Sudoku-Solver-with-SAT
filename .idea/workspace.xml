@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3edeab4a-07b0-4295-862f-85b653a5e2fa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" afterPath="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sat/SATSolver.java" afterPath="$PROJECT_DIR$/src/sat/SATSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sudoku/Main.java" afterPath="$PROJECT_DIR$/src/sudoku/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sudoku/Sudoku.java" afterPath="$PROJECT_DIR$/src/sudoku/Sudoku.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tests/SudokuTest.java" afterPath="$PROJECT_DIR$/src/tests/SudokuTest.java" />
     </list>
@@ -28,18 +31,11 @@
       <file leaf-file-name="SATSolver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sat/SATSolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="558">
+              <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="docComment;class#SATSolver#0" expanded="false" />
-                <element signature="docComment;method#solve#0;class#SATSolver#0" expanded="false" />
-                <element signature="e#730#731#0" expanded="false" />
-                <element signature="e#790#791#0" expanded="false" />
-                <element signature="docComment;method#solve#1;class#SATSolver#0" expanded="false" />
-                <element signature="method#solve#1;class#SATSolver#0" expanded="false" />
-                <element signature="docComment;method#substitute#0;class#SATSolver#0" expanded="false" />
-                <element signature="method#findShortestClause#0;class#SATSolver#0" expanded="false" />
+                <element signature="method#substitute#0;class#SATSolver#0" expanded="true" />
+                <element signature="method#findShortestClause#0;class#SATSolver#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,23 +44,23 @@
       <file leaf-file-name="Sudoku.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="287" column="32" lean-forward="false" selection-start-line="287" selection-start-column="32" selection-end-line="287" selection-end-column="32" />
+            <state relative-caret-position="95">
+              <caret line="498" column="0" lean-forward="false" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
               <folding>
-                <element signature="e#0#19050#0" expanded="true" />
+                <element signature="e#0#18883#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#Sudoku#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#Sudoku#1;class#Sudoku#0" expanded="true" />
-                <element signature="e#8080#8081#0" expanded="true" />
-                <element signature="e#8103#8104#0" expanded="true" />
                 <element signature="method#getCellByBlock#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#getCellValuesByBlock#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#equals#0;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;method#toString#0;class#Sudoku#0" expanded="true" />
-                <element signature="class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-                <element signature="method#exactlyOncePerBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#getProblem#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#atMostOneDigitPerSquare#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#exactlyOncePerRow#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+                <element signature="method#exactlyOncePerColumn#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
                 <element signature="method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
                 <element signature="docComment;method#interpretSolution#0;class#Sudoku#0" expanded="true" />
@@ -78,46 +74,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arrays.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Arrays.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="2825" column="0" lean-forward="false" selection-start-line="2825" selection-start-column="0" selection-end-line="2825" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sudoku/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="40" column="38" lean-forward="true" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+            <state relative-caret-position="239">
+              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#Main#0" expanded="true" />
                 <element signature="docComment;method#timedSolve#0;class#Main#0" expanded="true" />
+                <element signature="method#timedSolve#0;class#Main#0" expanded="true" />
                 <element signature="docComment;method#timedSolveFromFile#0;class#Main#0" expanded="true" />
                 <element signature="method#timedSolveFromFile#0;class#Main#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SudokuTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="138" column="43" lean-forward="false" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#testWrongColumnSize#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#testInvalidCellValues#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#testToString#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#testFromFileInvalidBlockSize#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#testFromFiles#0;class#SudokuTest#0" expanded="true" />
-                <element signature="method#readFile#0;class#SudokuTest#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/sudoku/test/SudokuTest.java" />
         <option value="$PROJECT_DIR$/src/tests/FormulaTest.java" />
         <option value="$PROJECT_DIR$/src/sat/env/Variable.java" />
-        <option value="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" />
         <option value="$PROJECT_DIR$/src/immutable/ImmutableList.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/PositiveLiteral.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/Literal.java" />
@@ -173,10 +139,11 @@
         <option value="$PROJECT_DIR$/src/sat/env/Boolean.java" />
         <option value="$PROJECT_DIR$/src/sat/formula/Formula.java" />
         <option value="$PROJECT_DIR$/src/tests/SATSolverTest.java" />
+        <option value="$PROJECT_DIR$/src/tests/SudokuTest.java" />
+        <option value="$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java" />
+        <option value="$PROJECT_DIR$/src/sudoku/Sudoku.java" />
         <option value="$PROJECT_DIR$/src/sat/SATSolver.java" />
         <option value="$PROJECT_DIR$/src/sudoku/Main.java" />
-        <option value="$PROJECT_DIR$/src/sudoku/Sudoku.java" />
-        <option value="$PROJECT_DIR$/src/tests/SudokuTest.java" />
       </list>
     </option>
   </component>
@@ -397,6 +364,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="immutable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -424,7 +395,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="Environ&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Environment.java&#10;Boolean&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Boolean.java&#10;Variabl&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Variable.java&#10;Negated&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/formula/NegatedLiteral.java&#10;Immutable&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/NonEmptyImmutableList.java&#10;ImmutableList&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/ImmutableList.java&#10;FileNameFilter&#9;PSI&#9;JAVA://java.io.FilenameFilter&#10;Logger&#9;PSI&#9;JAVA://java.util.logging.Logger&#10;Number&#9;PSI&#9;JAVA://java.lang.Number&#10;Pair &#9;PSI&#9;JAVA://java.text.EntryPair" />
+    <property name="SearchEverywhereHistoryKey" value="sudoku_ea&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/samples/sudoku_easy.txt&#10;Environ&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Environment.java&#10;Boolean&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Boolean.java&#10;Variabl&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/env/Variable.java&#10;Negated&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/sat/formula/NegatedLiteral.java&#10;Immutable&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/NonEmptyImmutableList.java&#10;ImmutableList&#9;FILE&#9;file:///home/n0ne/programming/IntelliJIDEA/MIT OCW 6.005/Problem sets/Problem set 4/src/immutable/ImmutableList.java&#10;FileNameFilter&#9;PSI&#9;JAVA://java.io.FilenameFilter&#10;Logger&#9;PSI&#9;JAVA://java.util.logging.Logger&#10;Number&#9;PSI&#9;JAVA://java.lang.Number&#10;Pair &#9;PSI&#9;JAVA://java.text.EntryPair" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test" />
   </component>
   <component name="RecentsManager">
@@ -432,7 +403,27 @@
       <recent name="sudoku.test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="sudoku.Main" />
+      <option name="VM_PARAMETERS" value="-Xmx2048m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ps4-starting" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="SATSolverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -509,26 +500,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="sudoku.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sudoku.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ps4-starting" />
-      <envs />
       <method />
     </configuration>
     <configuration default="false" name="SudokuTest.testGetCellByBlock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -775,17 +746,17 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SATSolverTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.SATSolverTest.testSolve" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.SATSolverTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SATSolverTest.testSolve" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.SudokuTest.testGetCellByBlock" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.SudokuTest.testGetCellByBlock" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.SudokuTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.SudokuTest.testGetCellByBlock" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.SATSolverTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.SATSolverTest.testSolve" />
       </list>
@@ -835,19 +806,16 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SudokuTest - 2017.02.18 at 21h 54m 22s.xml">
-      <configuration name="SudokuTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuTest - 2017.02.18 at 21h 55m 35s.xml">
-      <configuration name="SudokuTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SudokuTest - 2017.02.18 at 21h 55m 53s.xml">
-      <configuration name="SudokuTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SudokuTest - 2017.02.18 at 21h 57m 06s.xml">
       <configuration name="SudokuTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SudokuTest - 2017.02.19 at 09h 55m 28s.xml">
+      <configuration name="SudokuTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuTest - 2017.02.23 at 08h 43m 09s.xml">
+      <configuration name="SudokuTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuTest - 2017.02.23 at 08h 45m 57s.xml">
       <configuration name="SudokuTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SudokuTest_testBlockCells - 2017.02.23 at 08h 16m 35s.xml">
@@ -864,6 +832,9 @@
     </history-entry>
     <history-entry file="SudokuTest_testBlockCells - 2017.02.23 at 08h 36m 32s.xml">
       <configuration name="SudokuTest.testBlockCells" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SudokuTest_testGetCellByBlock - 2017.02.23 at 08h 40m 14s.xml">
+      <configuration name="SudokuTest.testGetCellByBlock" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -889,8 +860,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39555556" sideWeight="0.5132812" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579795" sideWeight="0.58962965" order="1" side_tool="true" content_ui="tabs" x="104" y="109" width="1166" height="541" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8739255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5748148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.87259257" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5733333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6651852" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -901,7 +872,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39851853" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5263158" sideWeight="0.48243046" order="3" side_tool="false" content_ui="tabs" x="0" y="1" width="1280" height="1024" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -946,25 +917,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sudoku/Main.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Arrays.java</url>
-          <line>2816</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="18" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="f.getSize()" language="JAVA" />
+        <watch expression="result.getSize();" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -1005,13 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableListIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1176,13 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/formula/Literal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1194,13 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1260,20 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Formula#0" expanded="true" />
-            <element signature="method#Formula#0;class#Formula#0" expanded="true" />
-            <element signature="method#Formula#3;class#Formula#0" expanded="true" />
-            <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
-            <element signature="docComment;method#or#0;class#Formula#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sat/env/Environment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1287,45 +1212,12 @@
         <state relative-caret-position="288">
           <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding>
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="method#make#1;class#PositiveLiteral#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="false" />
+            <element signature="e#776#777#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#863#864#0" expanded="false" />
+            <element signature="method#make#1;class#PositiveLiteral#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/SATSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#SATSolver#0" expanded="false" />
-            <element signature="docComment;method#solve#0;class#SATSolver#0" expanded="false" />
-            <element signature="e#730#731#0" expanded="false" />
-            <element signature="e#790#791#0" expanded="false" />
-            <element signature="docComment;method#solve#1;class#SATSolver#0" expanded="false" />
-            <element signature="method#solve#1;class#SATSolver#0" expanded="false" />
-            <element signature="docComment;method#substitute#0;class#SATSolver#0" expanded="false" />
-            <element signature="method#findShortestClause#0;class#SATSolver#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="146" column="18" lean-forward="false" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samples/sudoku_easy.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,25 +1229,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#testWrongColumnSize#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#testInvalidCellValues#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#testToString#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#testFromFileInvalidBlockSize#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#testGetCellByBlock#0;class#SudokuTest#0" expanded="true" />
+            <element signature="method#readFile#0;class#SudokuTest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/formula/Formula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="136" column="19" lean-forward="false" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+          <folding>
+            <element signature="docComment;class#Formula#0" expanded="true" />
+            <element signature="method#Formula#0;class#Formula#0" expanded="true" />
+            <element signature="method#Formula#3;class#Formula#0" expanded="true" />
+            <element signature="docComment;method#and#0;class#Formula#0" expanded="true" />
+            <element signature="method#and#0;class#Formula#0" expanded="true" />
+            <element signature="docComment;method#or#0;class#Formula#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/immutable/ImmutableListIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="docComment;class#ImmutableListIterator#0" expanded="false" />
+            <element signature="e#422#423#0" expanded="false" />
+            <element signature="e#445#446#0" expanded="false" />
+            <element signature="e#475#476#0" expanded="false" />
+            <element signature="e#509#510#0" expanded="false" />
+            <element signature="method#next#0;class#ImmutableListIterator#0" expanded="false" />
+            <element signature="e#638#639#0" expanded="false" />
+            <element signature="e#686#687#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/sudoku_easy.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/immutable/NonEmptyImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-486">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+          <folding>
+            <element signature="method#NonEmptyImmutableList#0;class#NonEmptyImmutableList#0" expanded="true" />
+            <element signature="method#NonEmptyImmutableList#1;class#NonEmptyImmutableList#0" expanded="true" />
+            <element signature="method#add#0;class#NonEmptyImmutableList#0" expanded="true" />
+            <element signature="method#contains#0;class#NonEmptyImmutableList#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/formula/Clause.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="104" column="19" lean-forward="false" selection-start-line="104" selection-start-column="19" selection-end-line="104" selection-end-column="19" />
+          <folding>
+            <element signature="e#2918#2919#0" expanded="false" />
+            <element signature="e#2948#2949#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sat/SATSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="55" column="35" lean-forward="false" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+          <folding>
+            <element signature="method#substitute#0;class#SATSolver#0" expanded="true" />
+            <element signature="method#findShortestClause#0;class#SATSolver#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Sudoku.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="287" column="32" lean-forward="false" selection-start-line="287" selection-start-column="32" selection-end-line="287" selection-end-column="32" />
+        <state relative-caret-position="95">
+          <caret line="498" column="0" lean-forward="false" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19050#0" expanded="true" />
+            <element signature="e#0#18883#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Sudoku#0" expanded="true" />
             <element signature="docComment;field#squares#0;class#Sudoku#0" expanded="true" />
             <element signature="docComment;method#Sudoku#0;class#Sudoku#0" expanded="true" />
             <element signature="method#Sudoku#0;class#Sudoku#0" expanded="true" />
             <element signature="method#Sudoku#1;class#Sudoku#0" expanded="true" />
-            <element signature="e#8080#8081#0" expanded="true" />
-            <element signature="e#8103#8104#0" expanded="true" />
             <element signature="method#getCellByBlock#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#getCellValuesByBlock#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#equals#0;class#Sudoku#0" expanded="true" />
             <element signature="docComment;method#toString#0;class#Sudoku#0" expanded="true" />
-            <element signature="class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
-            <element signature="method#exactlyOncePerBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#getProblem#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#atMostOneDigitPerSquare#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#exactlyOncePerRow#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
+            <element signature="method#exactlyOncePerColumn#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
             <element signature="docComment;method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
             <element signature="method#getCellByBlock#0;class#ProblemFactory#0;class#Sudoku#0" expanded="true" />
             <element signature="docComment;method#interpretSolution#0;class#Sudoku#0" expanded="true" />
@@ -1370,31 +1363,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sudoku/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="40" column="38" lean-forward="true" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+        <state relative-caret-position="239">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Main#0" expanded="true" />
             <element signature="docComment;method#timedSolve#0;class#Main#0" expanded="true" />
+            <element signature="method#timedSolve#0;class#Main#0" expanded="true" />
             <element signature="docComment;method#timedSolveFromFile#0;class#Main#0" expanded="true" />
             <element signature="method#timedSolveFromFile#0;class#Main#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/SudokuTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="138" column="43" lean-forward="false" selection-start-line="138" selection-start-column="43" selection-end-line="138" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#testWrongRowSize#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#testWrongColumnSize#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#testInvalidCellValues#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#testToString#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#testFromFileInvalidBlockSize#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#testFromFiles#0;class#SudokuTest#0" expanded="true" />
-            <element signature="method#readFile#0;class#SudokuTest#0" expanded="true" />
           </folding>
         </state>
       </provider>

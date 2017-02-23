@@ -87,7 +87,6 @@ public class SudokuTest {
 						".3.2\n";
 		final Sudoku s = new Sudoku(2, cells);
 
-		// System.out.println(s);
 		Assert.assertEquals(
 				s.toString(),
 				expectedResult
@@ -113,9 +112,6 @@ public class SudokuTest {
 			if (sampleFiles != null) {
 				for (File f: sampleFiles) {
 					s = Sudoku.fromFile(3, f.getPath());
-
-					// System.out.println(s);
-					// System.out.println(readFile(f));
 
 					Assert.assertEquals(
 							s.toString(),
