@@ -10,7 +10,7 @@ import sat.formula.*;
  */
 public class SATSolver {
 
-	private static Clause CONST_CLAUSE_EMPTY = new Clause();
+	private static Clause EMPTY_CLAUSE = new Clause();
 
 	/**
 	 * Solve the problem using a simple version of DPLL with backtracking and
@@ -24,10 +24,6 @@ public class SATSolver {
 	public static Environment solve (Formula formula) {
 		return solve(formula.getClauses(), new Environment());
 	}
-
-	// public static Environment solve (Formula formula, Environment env) {
-	// 	return solve(formula.getClauses(), env);
-	// }
 
 	/**
 	 * Takes a partial assignment of variables to values, and recursively
@@ -48,7 +44,7 @@ public class SATSolver {
 
 		if (clauses.isEmpty()) {
 			return env;
-		} if (clauses.contains(CONST_CLAUSE_EMPTY)) { //If clauses contains an empty clause:
+		} if (clauses.contains(EMPTY_CLAUSE)) {
 			return null;
 		}
 
@@ -76,11 +72,11 @@ public class SATSolver {
 	 * Given a clause list and literal, produce a new list resulting from
 	 * setting that literal to true.
 	 *
-	 * @param clauses , a list of clauses
-	 * @param l       , a literal to set to true
+	 * @param clauses a list of clauses
+	 * @param l a literal to set to true
 	 * @return a new list of clauses resulting from setting l to true
 	 */
-	private static ImmutableList<Clause> substitute (ImmutableList<Clause> clauses, Literal l) {
+	public static ImmutableList<Clause> substitute (ImmutableList<Clause> clauses, Literal l) {
 		ImmutableList<Clause> result = new EmptyImmutableList<>();
 
 		for (Clause c: clauses) {
@@ -93,12 +89,12 @@ public class SATSolver {
 	private static Clause findShortestClause (ImmutableList<Clause> clauses) {
 		Clause result = clauses.first();
 
-		if (result.size() != 1) {
+		if (result.size() > 1) {
 			for (Clause c: clauses.rest()) {
 				if (c.size() < result.size()) {
 					result = c;
 				}
-				if (result.size() == 1) { // We cannot find a shorter clause
+				if (result.size() <= 1) { // We cannot find a shorter clause
 					return result;
 				}
 			}

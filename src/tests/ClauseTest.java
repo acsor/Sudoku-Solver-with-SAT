@@ -1,54 +1,62 @@
 package tests;
 
+import org.junit.Assert;
 import org.junit.Test;
 import sat.formula.Clause;
 import sat.formula.Literal;
-import sat.formula.NegatedLiteral;
 import sat.formula.PositiveLiteral;
 
 import static org.junit.Assert.assertTrue;
 
 public class ClauseTest {
 
-	Literal p = PositiveLiteral.make("P"),
+	private Literal p = PositiveLiteral.make("P"),
 			q = PositiveLiteral.make("Q"),
 			r = PositiveLiteral.make("R"),
 			notP = p.getNegation(),
 			notQ = q.getNegation(),
 			notR = r.getNegation();
-	Clause empty = makeClause();
-	Clause cp = makeClause(p);
-	Clause cq = makeClause(q);
-	Clause cr = makeClause(r);
-	Clause cnp = makeClause(notP);
-	Clause cnq = makeClause(notQ);
-	Clause cpq = makeClause(p, q);
-	Clause cpqr = makeClause(p, q, r);
-	Clause cpnq = makeClause(p, notQ);
 
-	// makeClause sure assertions are turned on!
-	// we don't want to run sudoku.test.test cases without assertions too.
-	// see the handout to find out how to turn them on.
+	/**
+		makeClause sure assertions are turned on!
+		we don't want to run sudoku.test.test cases without assertions too.
+		see the handout to find out how to turn them on.
+	 */
 	@Test(expected = AssertionError.class)
 	public void testAssertionsEnabled () {
 		assert false;
 	}
 
 	@Test
-	public void testReduce () {
-		Clause c = new Clause().add(p).add(q).add(r);
-		Literal toReduce = c.chooseLiteral();
+	public void testSubstitute () {
+		final Clause[] clauses = {
+				makeClause(p, q, r),
+				makeClause(p, notQ, r),
+				makeClause(notP, notQ, r),
+				makeClause(p, notQ, notR),
+				makeClause(notP, q, notR),
+		};
+		final Literal toReduce = q;
+		final Clause[] expectedResult = {
+				null,
+				makeClause(p, r),
+				makeClause(notP, r),
+				makeClause(p, notR),
+				null
+		};
+		final int min = Math.min(clauses.length, expectedResult.length);
 
-		System.out.println(c);
-
-		c = c.reduce(toReduce);
-
-		System.out.println(c);
+		for (int i = 0; i < min; i++) {
+			Assert.assertEquals(
+					expectedResult[i],
+					clauses[i].reduce(toReduce)
+			);
+		}
 	}
 
 	@Test
 	public void testChooseLiteral () {
-		Clause c = cpqr;
+		Clause c = makeClause(p, q, r);
 
 		while (!(c.isEmpty())) {
 			Literal l = c.chooseLiteral();
