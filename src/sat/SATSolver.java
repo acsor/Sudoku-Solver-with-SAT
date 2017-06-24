@@ -76,7 +76,7 @@ public class SATSolver {
 	 * @param l a literal to set to true
 	 * @return a new list of clauses resulting from setting l to true
 	 */
-	public static ImmutableList<Clause> substitute (ImmutableList<Clause> clauses, Literal l) {
+	private static ImmutableList<Clause> substitute (ImmutableList<Clause> clauses, Literal l) {
 		ImmutableList<Clause> result = new EmptyImmutableList<>();
 
 		for (Clause c: clauses) {

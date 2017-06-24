@@ -21,10 +21,6 @@ public class SATSolverTest {
 			notB = b.getNegation(),
 			notC = c.getNegation();
 
-	public SATSolverTest () {
-
-	}
-
 	/**
 		make sure assertions are turned on!
 		we don't want to run sudoku.test.test cases without assertions too.
@@ -46,29 +42,32 @@ public class SATSolverTest {
 				new Formula(),
 				new Formula(new Clause()),
 				new Formula(new Clause(a), new Clause(notA)),
+				new Formula(new Clause(a, notB, notC), new Clause(notA, b, notC), new Clause(notA, notB, c)),
 		};
-		final Environment[] expectedSATResults = new Environment[]{
+		final Environment[] expectedResults = new Environment[]{
 				new Environment().putTrue(a.getVariable()).put(b.getVariable(), UNDEFINED),
 				null,
 				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
-				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
+				new Environment().putTrue(b.getVariable()).putTrue(c.getVariable()),
 				new Environment(),
 				null,
 				null,
+				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
 		};
-		final int min = Math.min(formulae.length, expectedSATResults.length);
+		final int min = Math.min(formulae.length, expectedResults.length);
 		Environment result;
 
 		for (int i = 0; i < min; i++) {
 			result = SATSolver.solve(formulae[i]);
 
-			System.out.println(formulae[i]);
-			System.out.println(result + "\n");
+//			System.out.println("Formula: " + formulae[i]);
+//			System.out.println("Expected result: " + expectedResults[i]);
+//			System.out.println("Computed result: " + result + "\n");
 
-//			Assert.assertEquals(
-//					expectedSATResults[i],
-//					result
-//			);
+			Assert.assertTrue(
+					(expectedResults[i] == null && result == null) ||
+							expectedResults[i].isEquivalentTo(result)
+			);
 		}
 	}
 

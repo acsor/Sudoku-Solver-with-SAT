@@ -117,7 +117,18 @@ public class ImmutableListMap<K, V> implements ImmutableMap<K, V> {
         return bindings.size() == 0;
     }
 
-    public String toString() {
+	@Override
+	public ImmutableList<K> keys () {
+    	ImmutableList<K> result = new EmptyImmutableList<K>();
+
+    	for (Binding b: bindings) {
+    		result = result.add(b.key);
+		}
+
+		return result;
+	}
+
+	public String toString() {
         return bindings.toString();
     }
 }

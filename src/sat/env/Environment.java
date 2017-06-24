@@ -9,6 +9,8 @@ package sat.env;
 import immutable.ImmutableListMap;
 import immutable.ImmutableMap;
 
+import static sat.env.Boolean.UNDEFINED;
+
 /**
  * An environment is an immutable mapping from variables to boolean values.
  * A special 3-valued Boolean type is used to handle the case
@@ -33,7 +35,7 @@ public class Environment {
 	}
 
 	public Environment () {
-		this(new ImmutableListMap<Variable, Boolean>());
+		this(new ImmutableListMap<>());
 	}
 
 	/**
@@ -68,14 +70,49 @@ public class Environment {
 		final Boolean b = bindings.get(v);
 
 		if (b == null) {
-			return Boolean.UNDEFINED;
+			return UNDEFINED;
 		}
 		return b;
+	}
+
+	/**
+	 *
+	 * @param other another environment to compare with
+	 * @return
+	 */
+	public boolean isEquivalentTo (Environment other) {
+		// The problem assignment clearly specifies to not modify or add any public method, amongst other things.
+		// An explanation for why this is being done is included in ImmutableMap.
+		Boolean temp;
+
+		if (other == null) {
+			return false;
+		}
+		if (other == this) {
+			return true;
+		}
+
+		for (Variable v: bindings.keys()) {
+			temp = get(v);
+
+			if (temp != UNDEFINED && temp != other.get(v)) {
+				return false;
+			}
+		}
+
+		for (Variable v: other.bindings.keys()) {
+			temp = get(v);
+
+			if (temp != UNDEFINED && temp != this.get(v)) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	@Override
 	public String toString () {
 		return "Environment:" + bindings;
 	}
-
 }

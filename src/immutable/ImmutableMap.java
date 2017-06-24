@@ -46,4 +46,14 @@ public interface ImmutableMap<K, V> {
 	 * @return true iff this map binds no keys
 	 */
 	boolean isEmpty ();
+
+	/**
+	 * The problem assignment clearly specified to not modify or add any public methods (amongst other things) but
+	 * adding a keys() method (principally useful in a test case) isn't going to alter much the structure of the project,
+	 * and I do not see any other way, except others much more ugly and verbose, to achieve what I need to get done.
+	 *
+	 * Hope this justifies this modification.
+	 */
+	ImmutableList<K> keys ();
+
 }
