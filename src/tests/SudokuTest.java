@@ -96,7 +96,7 @@ public class SudokuTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testFromFileInvalidBlockSize () throws IOException, ParseException {
 		final String fileName = "samples/sudoku_evil.txt";
-		Sudoku.fromFile(Sudoku.CONST_MAX_BLOCK_SIZE + 1, fileName);
+		Sudoku.fromFile(Sudoku.BLOCK_SIZE_MAX + 1, fileName);
 	}
 
 	@Test
@@ -126,23 +126,23 @@ public class SudokuTest {
 	public void testGetCellByBlock () throws IOException, ParseException {
     	final int blockSize = 3, blockSizePow = (int) Math.pow(blockSize, 2);
     	final Sudoku expected = Sudoku.fromFile(blockSize, "samples/sudoku_evil.txt");
-    	final Sudoku actual;
+    	final Sudoku built;
 
-    	final int[][] actualSquares = new int[blockSizePow][blockSizePow];
+    	final int[][] builtSquares = new int[blockSizePow][blockSizePow];
     	Sudoku.SudokuCell tempCell;
 
 		for (int b = 0; b < blockSizePow; b++) {
 			for (int c = 0; c < blockSizePow; c++) {
 				tempCell = expected.getCellByBlock(b, c);
-				actualSquares[tempCell.row][tempCell.column] = tempCell.value;
+				builtSquares[tempCell.row][tempCell.column] = tempCell.value;
 			}
 		}
 
-		actual = new Sudoku(blockSize, actualSquares);
+		built = new Sudoku(blockSize, builtSquares);
 
 		Assert.assertEquals(
 				expected,
-				actual
+				built
 		);
 	}
 

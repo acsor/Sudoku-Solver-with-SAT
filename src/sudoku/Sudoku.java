@@ -26,22 +26,22 @@ import static sat.env.Boolean.TRUE;
  */
 public class Sudoku {
 
-	private static final String CONST_EMPTY_CELL_REP = ".";
-	private static final String DELIM_OCCUPIES = ",";
+	private static final String CELL_REP_EMPTY = ".";
+	private static final String SEP_OCCUPIES = ",";
 
 	/**
 	 * The least valid value within every cell of the Sudoku.<br>
-	 * A value of {@code CONST_MIN_CELL} (or equivalently {@code CONST_EMPTY_CELL})
+	 * A value of {@code CELL_MIN} (or equivalently {@code CELL_EMPTY})
 	 * is reserved for empty cells.
 	 */
-	public static final int CONST_MIN_CELL = 0;
-	public static final int CONST_MIN_VALID_CELL = 1;
-	public static final int CONST_MAX_CELL = 9;
-	public static final int CONST_EMPTY_CELL = 0;
+	public static final int CELL_MIN = 0;
+	public static final int CELL_MIN_VALID = 1;
+	public static final int CELL_MAX_VALID = 9;
+	public static final int CELL_EMPTY = 0;
 
-	public static final int CONST_MIN_BLOCK_SIZE = 1; //Should it really be 1?
-	public static final int CONST_MAX_BLOCK_SIZE = 3;
-	public static final int CONST_DEFAULT_BLOCK_SIZE = 3;
+	public static final int BLOCK_SIZE_MIN = 1; //Should it really be 1?
+	public static final int BLOCK_SIZE_MAX = 3;
+	public static final int BLOCK_SIZE_DEFAULT = 3;
 
 	private final int blockSize; // blockSize: standard puzzle has blockSize 3
 	private final int size; // number of rows and columns: standard puzzle has size 9
@@ -61,7 +61,7 @@ public class Sudoku {
 	 *     comment. I am choosing to store a value of 0 for indicating an empty cell, because
 	 *     in a real Sudoku game cells are generally not filled with zeros, and so there
 	 *     shouldn't be any problem in using that number as a meta-value.<br>
-	 *     Whatever the value of empty cells, though, it is stored and used by the class field CONST_EMPTY_CELL.
+	 *     Whatever the value of empty cells, though, it is stored and used by the class field CELL_EMPTY.
 	 * </p>
 	 */
 	private final int[][] squares;
@@ -162,11 +162,11 @@ public class Sudoku {
 
 		for (int row = 0; row < squares.length; row++) {
 			for (int column = 0; column < squares[row].length; column++) {
-				if (squares[row][column] < CONST_MIN_CELL || squares[row][column] > CONST_MAX_CELL) {
+				if (squares[row][column] < CELL_MIN || squares[row][column] > CELL_MAX_VALID) {
 					throw new IllegalArgumentException(
 							String.format(
 									"cell (%d, %d)'s value must be comprised between %d and %d, found %d",
-									row, column, CONST_MIN_CELL, CONST_MAX_CELL, squares[row][column]
+									row, column, CELL_MIN, CELL_MAX_VALID, squares[row][column]
 							)
 					);
 				}
@@ -175,11 +175,11 @@ public class Sudoku {
 	}
 
 	private void initializeOccupies () {
-		occupies = new Variable[size][size][CONST_MAX_CELL];
+		occupies = new Variable[size][size][CELL_MAX_VALID];
 
 		for (int row = 0; row < squares.length; row++) {
 			for (int column = 0; column < squares[row].length; column++) {
-				if (squares[row][column] != CONST_EMPTY_CELL) {
+				if (squares[row][column] != CELL_EMPTY) {
 					occupies[row][column][squares[row][column] - 1] =
 							variableFactory(row, column, squares[row][column]);
 				}
@@ -203,11 +203,11 @@ public class Sudoku {
 	 * @throws IllegalArgumentException if blockSize value is invalid.
 	 */
 	public static Sudoku fromFile (int blockSize, String fileName) throws IOException, ParseException {
-		if (blockSize > CONST_MAX_BLOCK_SIZE) {
+		if (blockSize > BLOCK_SIZE_MAX) {
 			throw new IllegalArgumentException(
 					String.format(
 							"blockSize argument (%d) greater than max allowed (%d)",
-							blockSize, CONST_MAX_BLOCK_SIZE
+							blockSize, BLOCK_SIZE_MAX
 					)
 			);
 		}
@@ -302,8 +302,8 @@ public class Sudoku {
 
 		for (int row = 0; row < squares.length; row++) {
 			for (int column = 0; column < squares[row].length; column++) {
-				if (squares[row][column] == CONST_EMPTY_CELL) {
-					b.append(CONST_EMPTY_CELL_REP);
+				if (squares[row][column] == CELL_EMPTY) {
+					b.append(CELL_REP_EMPTY);
 				} else {
 					b.append(squares[row][column]);
 				}
@@ -326,6 +326,7 @@ public class Sudoku {
 	private class ProblemFactory {
 
 		public Formula getProblem () {
+			Formula[] steps = new Formula[5];
 			Formula result = new Formula();
 
 			result = loadFromGrid(result);
@@ -334,16 +335,30 @@ public class Sudoku {
 			result = exactlyOncePerColumn(result);
 			result = exactlyOncePerBlock(result);
 
+//			for (int i = 0; i < steps.length; i++) {
+//				steps[i] = new Formula();
+//			}
+//
+//			steps[0] = loadFromGrid(steps[0]);
+//			steps[1] = atMostOneDigitPerSquare(steps[1]);
+//			steps[2] = exactlyOncePerRow(steps[2]);
+//			steps[3] = exactlyOncePerColumn(steps[3]);
+//			steps[4] = exactlyOncePerBlock(steps[4]);
+//
+//			for (Formula step: steps) {
+//				result = result.and(step);
+//			}
+
 			return result;
 		}
 
-		private Formula loadFromGrid (Formula f) {
+		private Formula loadFromGrid (Formula previous) {
 			//Solution must be consistent with the starting grid.
 			for (int row = 0; row < occupies.length; row++) {
 				for (int column = 0; column < occupies[row].length; column++) {
 					for (int value = 0; value < occupies[row][column].length; value++) {
 						if (occupies[row][column][value] != null) {
-							f = f.addClause(
+							previous = previous.addClause(
 									new Clause(
 											PositiveLiteral.make(occupies[row][column][value])
 									)
@@ -353,17 +368,17 @@ public class Sudoku {
 				}
 			}
 
-			return f;
+			return previous;
 		}
 
-		private Formula atMostOneDigitPerSquare (Formula f) {
+		private Formula atMostOneDigitPerSquare (Formula previous) {
 			//At most one digit per square
 			for (int row = 0; row < squares.length; row++) {
 				for (int column = 0; column < squares[row].length; column++) {
 
-					for (int first = CONST_MIN_VALID_CELL; first <= CONST_MAX_CELL; first++) {
-						for (int second = first + 1; second <= CONST_MAX_CELL; second++) {
-							f = f.addClause(
+					for (int first = CELL_MIN_VALID; first <= CELL_MAX_VALID; first++) {
+						for (int second = first + 1; second <= CELL_MAX_VALID; second++) {
+							previous = previous.addClause(
 									new Clause(
 											NegatedLiteral.make(variableFactory(row, column, first)),
 											NegatedLiteral.make(variableFactory(row, column, second))
@@ -375,7 +390,7 @@ public class Sudoku {
 				}
 			}
 
-			return f;
+			return previous;
 		}
 
 		private Formula exactlyOncePerRow (Formula f) {
@@ -383,7 +398,7 @@ public class Sudoku {
 
 			//The code below will guarantee that a certain digit k will appear at least once in every row r.
 			for (int row = 0; row < squares.length; row++) {
-				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					atLeastOnce = new Clause();
 
 					for (int column = 0; column < squares[row].length; column++) {
@@ -400,7 +415,7 @@ public class Sudoku {
 
 			//The code below will guarantee that every valid digit k does not appear more than once in a given row r.
 			for (int row = 0; row < squares.length; row++) {
-				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					for (int firstCol = 0; firstCol < squares[row].length; firstCol++) {
 						for (int secondCol = firstCol + 1; secondCol < squares[row].length; secondCol++) {
 							atMostOnce = new Clause()
@@ -422,7 +437,7 @@ public class Sudoku {
 			The number of columns to iterate on is based on the number of "columns" or cells contained within the
 			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
-				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					atLeastOnce = new Clause();
 
 					for (int row = 0; row < squares.length; row++) {
@@ -441,7 +456,7 @@ public class Sudoku {
 			The number of columns to iterate on is based on the number of "columns" or cells contained within the
 			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
-				for (int value = CONST_MIN_VALID_CELL; value <= CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					for (int firstRow = 0; firstRow < squares.length; firstRow++) {
 						for (int secondRow = firstRow + 1; secondRow < squares.length; secondRow++) {
 							atMostOnce = new Clause()
@@ -463,7 +478,7 @@ public class Sudoku {
 
 			//The code below guarantees that each value k is present at least once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
-				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					atLeastOnce = new Clause();
 
 					//For every cell in block block:
@@ -481,7 +496,7 @@ public class Sudoku {
 
 			//The code below guarantees that each value k is present at most once in every block.
 			for (int block = 0; block < Math.pow(blockSize, 2); block++) { //For every block:
-				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					for (int firstCell = 0; firstCell < Math.pow(blockSize, 2); firstCell++) {
 						for (int secondCell = firstCell + 1; secondCell < Math.pow(blockSize, 2); secondCell++) {
 							first = this.getCellByBlock(block, firstCell);
@@ -527,8 +542,8 @@ public class Sudoku {
 
 		for (int row = 0; row < solution.squares.length; row++) {
 			for (int column = 0; column < solution.squares[row].length; column++) {
-				for (int value = CONST_MIN_VALID_CELL; value < CONST_MAX_CELL; value++) {
-					if (solution.squares[row][column] == CONST_EMPTY_CELL && e.get(variableFactory(row, column, value)) == TRUE) {
+				for (int value = CELL_MIN_VALID; value < CELL_MAX_VALID; value++) {
+					if (solution.squares[row][column] == CELL_EMPTY && e.get(variableFactory(row, column, value)) == TRUE) {
 						solution.squares[row][column] = value;
 					}
 				}
@@ -543,12 +558,12 @@ public class Sudoku {
 		int cellValue;
 
 		for (int i = 0; i < row.length(); i++) {
-			if (String.valueOf(row.charAt(i)).contentEquals(CONST_EMPTY_CELL_REP)) {
-				result[i] = CONST_EMPTY_CELL;
+			if (String.valueOf(row.charAt(i)).contentEquals(CELL_REP_EMPTY)) {
+				result[i] = CELL_EMPTY;
 			} else {
 				cellValue = Integer.valueOf("" + row.subSequence(i, i + 1));
 
-				if (cellValue <= CONST_MIN_CELL || cellValue > CONST_MAX_CELL) {
+				if (cellValue <= CELL_MIN || cellValue > CELL_MAX_VALID) {
 					throw new ParseException(
 							String.format(
 									"Unrecognized symbol %c", row.charAt(i)
@@ -564,11 +579,11 @@ public class Sudoku {
 	}
 
 	private Variable variableFactory (int row, int column, int value) {
-		if (value < CONST_MIN_CELL || value > CONST_MAX_CELL) {
+		if (value < CELL_MIN || value > CELL_MAX_VALID) {
 			throw new IllegalStateException(
 					String.format(
 							"Value (%d) must be comprised between %d and %d",
-							value, CONST_MIN_CELL, CONST_MAX_CELL
+							value, CELL_MIN, CELL_MAX_VALID
 					)
 			);
 		}
@@ -591,7 +606,7 @@ public class Sudoku {
 
 		return new Variable(
 				String.join(
-						DELIM_OCCUPIES,
+						SEP_OCCUPIES,
 						String.valueOf(row),
 						String.valueOf(column),
 						String.valueOf(value)

@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.Assert;
 import org.junit.Test;
 import sat.SATSolver;
 import sat.env.Environment;
@@ -12,14 +13,15 @@ import static sat.env.Boolean.UNDEFINED;
 
 public class SATSolverTest {
 
-	Literal a = PositiveLiteral.make("a"),
+	private Literal
+			a = PositiveLiteral.make("a"),
 			b = PositiveLiteral.make("b"),
 			c = PositiveLiteral.make("c"),
 			notA = a.getNegation(),
 			notB = b.getNegation(),
 			notC = c.getNegation();
 	private Formula[] formulae;
-	private Environment[] expectedSATResults;
+	private Environment[] expectedResults;
 
 	public SATSolverTest () {
 		formulae = new Formula[]{
@@ -30,14 +32,20 @@ public class SATSolverTest {
 				new Formula(new Clause(a, b, c), new Clause(notA, b, notC), new Clause(notA, notB, c)),
 				new Formula(),
 				new Formula(new Clause()),
+				new Formula(new Clause(a), new Clause(notA)),
+				new Formula(new Clause(a, notB, notC), new Clause(notA, b, notC), new Clause(notA, notB, c)),
+				new Formula(new Clause(a, b, c), new Clause(notA, notB, c), new Clause(notA, b, c)),
+				new Formula(new Clause(notA, b), new Clause(notA, notB)),
 		};
-		expectedSATResults = new Environment[]{
+		expectedResults = new Environment[]{
 				new Environment().putTrue(a.getVariable()).put(b.getVariable(), UNDEFINED),
 				null,
 				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
 				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
 				new Environment(),
-				null
+				null,
+				new Environment().putTrue(c.getVariable()),
+				new Environment().putFalse(a.getVariable()),
 		};
 	}
 
@@ -51,20 +59,20 @@ public class SATSolverTest {
 
 	@Test
 	public void testSolve () {
-		final int min = Math.min(formulae.length, expectedSATResults.length);
+		final int min = Math.min(formulae.length, expectedResults.length);
 		Environment result;
 
 		for (int i = 0; i < min; i++) {
 			result = SATSolver.solve(formulae[i]);
 
-			System.out.println(formulae[i]);
-			System.out.println(result);
-			System.out.println();
+			System.out.println("Formula: " + formulae[i]);
+			System.out.println("Expected result: " + expectedResults[i]);
+			System.out.println("Computed result: " + result + "\n");
 
-			// Assert.assertEquals(
-			// 		expectedSATResults[i],
-			// 		result
-			// );
+			Assert.assertEquals(
+					expectedResults[i],
+					result
+			);
 		}
 	}
 

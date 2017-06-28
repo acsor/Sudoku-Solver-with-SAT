@@ -1,6 +1,6 @@
 package sudoku;
 
-import sat.SATSolver;
+import sat.JeremySATSolver;
 import sat.env.Environment;
 import sat.formula.Formula;
 
@@ -12,15 +12,14 @@ public class Main {
 	 * Uncomment line(s) below to sudoku.test.test your implementation!
 	 */
 	public static void main (String[] args) {
-		// timedSolve(new Sudoku(2));
-        // timedSolve (new Sudoku(2, new int[][] {
-        //             new int[] { 0, 1, 0, 4 },
-        //             new int[] { 0, 0, 0, 0 },
-        //             new int[] { 2, 0, 3, 0 },
-        //             new int[] { 0, 0, 0, 0 },
-		// }));
-        timedSolveFromFile(3, "samples/sudoku_easy.txt");
-        //timedSolveFromFile(3, "samples/sudoku_hard.txt");
+		timedSolve (new Sudoku(2, new int[][] {
+				new int[] {0, 1, 0, 4},
+				new int[] {0, 0, 0, 0},
+				new int[] {2, 0, 3, 0},
+				new int[] {0, 0, 0, 0},
+		}));
+//        timedSolveFromFile(3, "samples/sudoku_easy.txt");
+//        timedSolveFromFile(3, "samples/sudoku_hard.txt");
 	}
 
 	/**
@@ -30,21 +29,22 @@ public class Main {
 	 */
 	private static void timedSolve (Sudoku sudoku) {
 		long started = System.nanoTime();
+		long time, timeTaken;
 
 		System.out.println("Creating SAT formula...");
 		Formula f = sudoku.getProblem();
 
 		System.out.println("Solving...");
-		Environment e = SATSolver.solve(f);
+		Environment e = JeremySATSolver.solve(f);
 
 		System.out.println("Interpreting solution...");
 		Sudoku solution = sudoku.interpretSolution(e);
 
 		System.out.println("Solution is: \n" + solution);
 
-		long time = System.nanoTime();
-		long timeTaken = (time - started);
-		System.out.println("Time:" + timeTaken / 1000000 + "ms");
+		time = System.nanoTime();
+		timeTaken = (time - started);
+		System.out.println("Time: " + timeTaken / Math.pow(10, 6) + "ms");
 	}
 
 	/**

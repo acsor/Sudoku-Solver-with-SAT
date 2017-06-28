@@ -1,2 +1,6 @@
-#Local .gitignore rules
+# Local .gitignore rules
+*SATSolver.java
+*.iws
+workspace.xml
+tasks.xml
 bin/
