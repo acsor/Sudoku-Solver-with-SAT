@@ -59,7 +59,7 @@ public class SATSolverTest {
 				null,
 
 				null,
-				new Environment().putTrue(a.getVariable()).putTrue(b.getVariable()).putTrue(c.getVariable()),
+				new Environment().putTrue(c.getVariable()),
 				new Environment().putTrue(c.getVariable()),
 
 				new Environment().putFalse(a.getVariable())

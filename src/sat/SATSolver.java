@@ -3,6 +3,7 @@ package sat;
 import immutable.EmptyImmutableList;
 import immutable.ImmutableList;
 import sat.env.Environment;
+import sat.env.Boolean;
 import sat.formula.*;
 
 /**
@@ -51,18 +52,23 @@ public class SATSolver {
 		shortest = findShortestClause(clauses);
 		toReduce = shortest.chooseLiteral();
 
-		reducedClauses = substitute(clauses, toReduce);
-		resultEnv = solve(
-				reducedClauses,
-				env.putTrue(toReduce.getVariable())
-		);
-
-		if (resultEnv == null) {
-			reducedClauses = substitute(clauses, toReduce.getNegation());
-			resultEnv = solve(
-					reducedClauses,
-					env.putFalse(toReduce.getVariable())
+		if (shortest.size() == 1) {
+			env = env.put(
+					toReduce.getVariable(),
+					(toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE
 			);
+			reducedClauses = substitute(clauses, toReduce);
+
+			return solve(reducedClauses, env);
+		} else {
+			env = env.put(toReduce.getVariable(), (toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE);
+			reducedClauses = substitute(clauses, toReduce);
+			resultEnv = solve(reducedClauses, env);
+
+			if (resultEnv == null) {
+				env = env.put(toReduce.getVariable(), (toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE);
+				resultEnv = solve(reducedClauses, env);
+			}
 		}
 
 		return resultEnv;
@@ -78,9 +84,14 @@ public class SATSolver {
 	 */
 	private static ImmutableList<Clause> substitute (ImmutableList<Clause> clauses, Literal l) {
 		ImmutableList<Clause> result = new EmptyImmutableList<>();
+		Clause reduction;
 
 		for (Clause c: clauses) {
-			result = result.add(c.reduce(l));
+			reduction = c.reduce(l);
+
+			if (reduction != null) {
+				result = result.add(reduction);
+			}
 		}
 
 		return result;
@@ -94,7 +105,7 @@ public class SATSolver {
 				if (c.size() < result.size()) {
 					result = c;
 				}
-				if (result.size() <= 1) { // We cannot find a shorter clause
+				if (result.size() == 1) { // We cannot find a shorter clause
 					return result;
 				}
 			}
