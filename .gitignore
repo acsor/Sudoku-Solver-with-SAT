@@ -1,6 +1,6 @@
 # Local .gitignore rules
 *SATSolver.java
 *.iws
-workspace.xml
+.idea/workspace.xml
 tasks.xml
 bin/
