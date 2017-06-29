@@ -12,5 +12,7 @@ found in the `Instructions.pdf` file in the project root directory.
 
 ## Basic usage
 To run this project the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/) is recommended.
-To execute the Sudoku solver it is enough opening the `src/sudoku/Main.java` file and running the main() method.
-<b>Warning</b>: this implementetantion contains bugs and some of the sample unfilled sudoku grids may not work.
+
+To execute the Sudoku solver it is enough opening the `src/sudoku/Main.java` file and running the `main()` method.
+
+<b>Warning</b>: this implementation contains bugs and some of the sample unfilled sudoku grids may not work.

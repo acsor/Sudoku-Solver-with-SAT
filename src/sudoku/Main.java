@@ -19,9 +19,12 @@ public class Main {
 //				new int[] {2, 0, 3, 1},
 //				new int[] {0, 0, 4, 0},
 //		}));
+		timedSolveFromFile(2, "samples/sudoku_4x4.txt");
+		timedSolveFromFile(3, "samples/sudoku_easy.txt");
         timedSolveFromFile(3, "samples/sudoku_easy2.txt");
-//        timedSolveFromFile(3, "samples/sudoku_hard.txt");
-//		timedSolveFromFile(3, "samples/sudoku_evil.txt");
+        timedSolveFromFile(3, "samples/sudoku_hard.txt");
+		timedSolveFromFile(3, "samples/sudoku_hard2.txt");
+		timedSolveFromFile(3, "samples/sudoku_evil.txt");
 	}
 
 	/**
