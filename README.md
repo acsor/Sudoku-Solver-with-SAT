@@ -11,6 +11,6 @@ the [DPLL algorithm](https://en.wikipedia.org/wiki/DPLL_algorithm). More details
 found in the `Instructions.pdf` file in the project root directory.
 
 ## Basic usage
-This implementation <b>still doesn't work</b> as intended. The `src/sudoku/Main.java` launcher outputs a partial solution
-to the various Sudoku grids, but only when some problem constraints are weakened. Some work is being done to update
-the solution and will be uploaded to this repository when ready.
+To run this project the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/) is recommended.
+To execute the Sudoku solver it is enough opening the `src/sudoku/Main.java` file and running the main() method.
+<b>Warning</b>: this implementetantion contains bugs and some of the sample unfilled sudoku grids may not work.

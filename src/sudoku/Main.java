@@ -1,6 +1,7 @@
 package sudoku;
 
 import sat.JeremySATSolver;
+import sat.SATSolver;
 import sat.env.Environment;
 import sat.formula.Formula;
 
@@ -14,12 +15,13 @@ public class Main {
 	public static void main (String[] args) {
 //		timedSolve (new Sudoku(2, new int[][] {
 //				new int[] {0, 1, 0, 4},
-//				new int[] {0, 0, 0, 0},
-//				new int[] {2, 0, 3, 0},
-//				new int[] {0, 0, 0, 0},
+//				new int[] {0, 2, 0, 0},
+//				new int[] {2, 0, 3, 1},
+//				new int[] {0, 0, 4, 0},
 //		}));
-        timedSolveFromFile(3, "samples/sudoku_easy.txt");
+        timedSolveFromFile(3, "samples/sudoku_easy2.txt");
 //        timedSolveFromFile(3, "samples/sudoku_hard.txt");
+//		timedSolveFromFile(3, "samples/sudoku_evil.txt");
 	}
 
 	/**
@@ -29,22 +31,34 @@ public class Main {
 	 */
 	private static void timedSolve (Sudoku sudoku) {
 		long started = System.nanoTime();
-		long time, timeTaken;
+		long timeTaken;
+		Formula f;
+		Environment e;
+		Sudoku solution;
 
 		System.out.println("Creating SAT formula...");
-		Formula f = sudoku.getProblem();
+		f = sudoku.getProblem();
 
 		System.out.println("Solving...");
-		Environment e = JeremySATSolver.solve(f);
+		e = SATSolver.solve(f);
 
-		System.out.println("Interpreting solution...");
-		Sudoku solution = sudoku.interpretSolution(e);
+		if (e != null) {
+			System.out.println("Interpreting solution...");
+			solution = sudoku.interpretSolution(e);
 
-		System.out.println("Solution is: \n" + solution);
+			if (!solution.isValid()) {
+				System.err.println("The solver tried to come up with a solution, but it was invalid:");
+			}
 
-		time = System.nanoTime();
-		timeTaken = (time - started);
-		System.out.println("Time: " + timeTaken / Math.pow(10, 6) + "ms");
+			System.out.println("Solution is: \n" + solution);
+
+			timeTaken = (System.nanoTime() - started);
+			System.out.format("Time: %.2fms.\n", timeTaken / Math.pow(10, 6));
+		} else {
+			System.err.println("Failed solving selected Sudoku");
+		}
+
+		System.out.println("\n");
 	}
 
 	/**
@@ -56,9 +70,7 @@ public class Main {
 	private static void timedSolveFromFile (int dim, String filename) {
 		try {
 			timedSolve(Sudoku.fromFile(dim, filename));
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
+		} catch (ParseException | IOException e) {
 			e.printStackTrace();
 		}
 	}

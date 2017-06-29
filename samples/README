@@ -1,0 +1,7 @@
+The sudoku_wrong_*.txt files in the samples/ directory were added for use
+in the isValid() method of the Sudoku class. They were adapted from correct solutions in the
+following manner:
+
+1. sudoku_wrong_easy.txt has one error in one of its lines;
+2. sudoku_wrong_hard2.txt has one error in one of its columns;
+3. sudoku_wrong_evil.txt has one error in one of its blocks.

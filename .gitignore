@@ -2,5 +2,6 @@
 *SATSolver.java
 *.iws
 .idea/workspace.xml
+.idea/tools.xml
 tasks.xml
 bin/

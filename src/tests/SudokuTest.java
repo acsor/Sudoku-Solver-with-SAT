@@ -72,6 +72,28 @@ public class SudokuTest {
 		new Sudoku(blockSize, cells);
 	}
 
+	/**
+	 * Tests the isValid() method of Sudoku by feeding invalid Sudoku grids.
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	@Test
+	public void testIsValid () throws IOException, ParseException {
+    	final String dir = "samples/";
+    	String[] files = {
+				"sudoku_wrong_easy.txt",
+				"sudoku_wrong_hard2.txt",
+				"sudoku_wrong_evil.txt"
+    	};
+
+    	for (String file: files) {
+    		Assert.assertTrue(
+    				Sudoku.fromFile(3, dir + file).isValid() == false,
+					String.format("\"%s\" is a valid Sudoku grid, or other errors were encountered.\n", file)
+			);
+		}
+	}
+
 	@Test
 	public void testToString () {
 		final int[][] cells = {

@@ -175,16 +175,61 @@ public class Sudoku {
 	}
 
 	private void initializeOccupies () {
-		occupies = new Variable[size][size][CELL_MAX_VALID];
+		occupies = new Variable[size][size][CELL_MAX_VALID + 1];
 
 		for (int row = 0; row < squares.length; row++) {
 			for (int column = 0; column < squares[row].length; column++) {
 				if (squares[row][column] != CELL_EMPTY) {
-					occupies[row][column][squares[row][column] - 1] =
+					occupies[row][column][squares[row][column]] =
 							variableFactory(row, column, squares[row][column]);
 				}
 			}
 		}
+	}
+
+	/**
+	 * @return true if the Sudoku constraints are satisfied, false otherwise (cells were filled in wrongly).
+	 */
+	public boolean isValid () {
+		// The JRE specification requires to initialize arrays' values to default values (0), so I'm not going to do it.
+		int[] cellHits = new int[CELL_MAX_VALID - CELL_MIN_VALID + 2];
+
+		for (int row = 0; row < squares.length; row++) {
+			for (int col = 0; col < squares[row].length; col++) {
+				cellHits[squares[row][col]]++;
+			}
+
+			if (valueHitExceedsOne(cellHits))
+				return false;
+
+			cellHits = new int[cellHits.length];
+		}
+
+		cellHits = new int[cellHits.length];
+		for (int col = 0; col < squares[0].length; col++) {
+			for (int row = 0; row < squares.length; row++) {
+				cellHits[squares[row][col]]++;
+			}
+
+			if (valueHitExceedsOne(cellHits))
+				return false;
+
+			cellHits = new int[cellHits.length];
+		}
+
+		cellHits = new int[cellHits.length];
+		for (int block = 0; block < Math.pow(blockSize, 2); block++) {
+			for (int cell = 0; cell < Math.pow(blockSize, 2); cell++) {
+				cellHits[getCellByBlock(block, cell).value]++;
+			}
+
+			if (valueHitExceedsOne(cellHits))
+				return false;
+
+			cellHits = new int[cellHits.length];
+		}
+
+		return true;
 	}
 
 	/**
@@ -359,9 +404,7 @@ public class Sudoku {
 					for (int value = 0; value < occupies[row][column].length; value++) {
 						if (occupies[row][column][value] != null) {
 							previous = previous.addClause(
-									new Clause(
-											PositiveLiteral.make(occupies[row][column][value])
-									)
+									new Clause(PositiveLiteral.make(occupies[row][column][value]))
 							);
 						}
 					}
@@ -484,10 +527,9 @@ public class Sudoku {
 					//For every cell in block block:
 					for (int cellIndex = 0; cellIndex < Math.pow(blockSize, 2); cellIndex++) {
 						cell = getCellByBlock(block, cellIndex);
-						atLeastOnce = atLeastOnce
-								.add(
-										PositiveLiteral.make(variableFactory(cell.row, cell.column, value))
-								);
+						atLeastOnce = atLeastOnce.add(
+								PositiveLiteral.make(variableFactory(cell.row, cell.column, value))
+						);
 					}
 
 					f = f.addClause(atLeastOnce);
@@ -542,7 +584,7 @@ public class Sudoku {
 
 		for (int row = 0; row < solution.squares.length; row++) {
 			for (int column = 0; column < solution.squares[row].length; column++) {
-				for (int value = CELL_MIN_VALID; value < CELL_MAX_VALID; value++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					if (solution.squares[row][column] == CELL_EMPTY && e.get(variableFactory(row, column, value)) == TRUE) {
 						solution.squares[row][column] = value;
 					}
@@ -551,31 +593,6 @@ public class Sudoku {
 		}
 
 		return solution;
-	}
-
-	private static int[] stringToIntCellArray (String row) throws ParseException {
-		final int[] result = new int[row.length()];
-		int cellValue;
-
-		for (int i = 0; i < row.length(); i++) {
-			if (String.valueOf(row.charAt(i)).contentEquals(CELL_REP_EMPTY)) {
-				result[i] = CELL_EMPTY;
-			} else {
-				cellValue = Integer.valueOf("" + row.subSequence(i, i + 1));
-
-				if (cellValue <= CELL_MIN || cellValue > CELL_MAX_VALID) {
-					throw new ParseException(
-							String.format(
-									"Unrecognized symbol %c", row.charAt(i)
-							)
-					);
-				} else {
-					result[i] = cellValue;
-				}
-			}
-		}
-
-		return result;
 	}
 
 	private Variable variableFactory (int row, int column, int value) {
@@ -610,8 +627,42 @@ public class Sudoku {
 						String.valueOf(row),
 						String.valueOf(column),
 						String.valueOf(value)
-				)
+				) + "\n"
 		);
+	}
+
+	private static int[] stringToIntCellArray (String row) throws ParseException {
+		final int[] result = new int[row.length()];
+		int cellValue;
+
+		for (int i = 0; i < row.length(); i++) {
+			if (String.valueOf(row.charAt(i)).contentEquals(CELL_REP_EMPTY)) {
+				result[i] = CELL_EMPTY;
+			} else {
+				cellValue = Integer.valueOf("" + row.subSequence(i, i + 1));
+
+				if (cellValue <= CELL_MIN || cellValue > CELL_MAX_VALID) {
+					throw new ParseException(
+							String.format(
+									"Unrecognized symbol %c", row.charAt(i)
+							)
+					);
+				} else {
+					result[i] = cellValue;
+				}
+			}
+		}
+
+		return result;
+	}
+
+	private boolean valueHitExceedsOne (int[] values) {
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] > 1)
+				return true;
+		}
+
+		return false;
 	}
 
 	public static class SudokuCell {
