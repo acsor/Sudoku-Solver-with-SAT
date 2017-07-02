@@ -3,8 +3,13 @@ package sat;
 import immutable.EmptyImmutableList;
 import immutable.ImmutableList;
 import sat.env.Environment;
-import sat.env.Boolean;
-import sat.formula.*;
+import sat.formula.Clause;
+import sat.formula.Formula;
+import sat.formula.Literal;
+import sat.formula.NegatedLiteral;
+
+import static sat.env.Boolean.FALSE;
+import static sat.env.Boolean.TRUE;
 
 /**
  * A simple DPLL SAT solver. See http://en.wikipedia.org/wiki/DPLL_algorithm
@@ -37,37 +42,52 @@ public class SATSolver {
 	 * or null if no such environment exists.
 	 */
 	private static Environment solve (ImmutableList<Clause> clauses, Environment env) {
-		ImmutableList<Clause> reducedClauses;
 		Environment resultEnv;
-
 		Clause shortest;
 		Literal toReduce;
 
 		if (clauses.isEmpty()) {
 			return env;
-		} if (clauses.contains(EMPTY_CLAUSE)) {
-			return null;
+		} else {
+			shortest = clauses.first();
 		}
 
-		shortest = findShortestClause(clauses);
+		/* For performance sake, I'm not going to use the findShortestClause() method below, as I noticed that
+		copy-pasting that code inside the calling method (here) and doing additional, mixed operations, even if a little
+		bit untidy, sensibly speeds up the program. */
+		if (shortest.isEmpty()) {
+			return null;
+		}
+		for (Clause c: clauses.rest()) {
+			if (c.isEmpty()) {
+				return null;
+			} else if (c.size() < shortest.size()) {
+				shortest = c;
+			}
+		}
+
 		toReduce = shortest.chooseLiteral();
 
 		if (shortest.size() == 1) {
-			env = env.put(
-					toReduce.getVariable(),
-					(toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE
+			resultEnv = solve(
+					substitute(clauses, toReduce),
+					env.put(toReduce.getVariable(), (toReduce instanceof NegatedLiteral) ? FALSE: TRUE)
 			);
-			reducedClauses = substitute(clauses, toReduce);
-
-			return solve(reducedClauses, env);
 		} else {
-			env = env.put(toReduce.getVariable(), (toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE);
-			reducedClauses = substitute(clauses, toReduce);
-			resultEnv = solve(reducedClauses, env);
+			if (toReduce instanceof NegatedLiteral) {
+				resultEnv = solve(substitute(clauses, toReduce), env.putFalse(toReduce.getVariable()));
 
-			if (resultEnv == null) {
-				env = env.put(toReduce.getVariable(), (toReduce instanceof PositiveLiteral) ? Boolean.TRUE: Boolean.FALSE);
-				resultEnv = solve(reducedClauses, env);
+				if (resultEnv == null) {
+					resultEnv = solve(substitute(clauses, toReduce.getNegation()), env.putTrue(toReduce.getVariable()));
+				}
+			} else {
+				resultEnv = solve(substitute(clauses, toReduce), env.putTrue(toReduce.getVariable()));
+
+				if (resultEnv == null) {
+					resultEnv = solve(
+							substitute(clauses, toReduce.getNegation()), env.putFalse(toReduce.getVariable())
+					);
+				}
 			}
 		}
 

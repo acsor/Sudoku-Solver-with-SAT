@@ -15,4 +15,6 @@ To run this project the [IntelliJ IDEA IDE](https://www.jetbrains.com/idea/) is 
 
 To execute the Sudoku solver it is enough opening the `src/sudoku/Main.java` file and running the `main()` method.
 
-<b>Warning</b>: this implementation contains bugs and some of the sample unfilled sudoku grids may not work.
+<b>Warning</b>: 2x2 grids aren't supported, as they require shortening the range of admissible values from 1..9 to
+something else. Besides that, each component of this project has been extensively tested and worked fine (and
+with good performance) in all the cases covered so far.

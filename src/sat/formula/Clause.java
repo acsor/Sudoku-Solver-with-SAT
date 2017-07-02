@@ -239,7 +239,7 @@ public class Clause implements Iterable<Literal> {
 	}
 
 	public String toString () {
-		return "Clause" + literals;
+		return "Clause" + literals + "\n";
 	}
 
 	@Override

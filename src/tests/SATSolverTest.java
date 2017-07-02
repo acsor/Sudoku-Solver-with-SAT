@@ -70,9 +70,9 @@ public class SATSolverTest {
 		for (int i = 0; i < min; i++) {
 			result = SATSolver.solve(formulae[i]);
 
-			System.out.println("Formula: " + formulae[i]);
-			System.out.println("Expected result: " + expectedResults[i]);
-			System.out.println("Computed result: " + result + "\n");
+//			System.out.println("Formula: " + formulae[i]);
+//			System.out.println("Expected result: " + expectedResults[i]);
+//			System.out.println("Computed result: " + result + "\n");
 
 			Assert.assertTrue(
 					(expectedResults[i] == null && result == null) ||

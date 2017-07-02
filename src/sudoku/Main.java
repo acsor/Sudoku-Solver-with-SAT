@@ -1,6 +1,5 @@
 package sudoku;
 
-import sat.JeremySATSolver;
 import sat.SATSolver;
 import sat.env.Environment;
 import sat.formula.Formula;
@@ -13,18 +12,26 @@ public class Main {
 	 * Uncomment line(s) below to sudoku.test.test your implementation!
 	 */
 	public static void main (String[] args) {
+		final String dir = "samples/";
+		final String[]	samples9x9 = {
+				"sudoku_easy.txt",
+				"sudoku_easy2.txt",
+				"sudoku_hard.txt",
+				"sudoku_hard2.txt",
+				"sudoku_hard3.txt",
+				"sudoku_hard4.txt",
+		};
+
 //		timedSolve (new Sudoku(2, new int[][] {
 //				new int[] {0, 1, 0, 4},
 //				new int[] {0, 2, 0, 0},
 //				new int[] {2, 0, 3, 1},
 //				new int[] {0, 0, 4, 0},
 //		}));
-		timedSolveFromFile(2, "samples/sudoku_4x4.txt");
-		timedSolveFromFile(3, "samples/sudoku_easy.txt");
-        timedSolveFromFile(3, "samples/sudoku_easy2.txt");
-        timedSolveFromFile(3, "samples/sudoku_hard.txt");
-		timedSolveFromFile(3, "samples/sudoku_hard2.txt");
-		timedSolveFromFile(3, "samples/sudoku_evil.txt");
+
+		for (String sample: samples9x9) {
+			timedSolveFromFile(3, dir + sample);
+		}
 	}
 
 	/**
@@ -33,11 +40,15 @@ public class Main {
 	 * @param sudoku
 	 */
 	private static void timedSolve (Sudoku sudoku) {
-		long started = System.nanoTime();
-		long timeTaken;
+		long started = System.nanoTime(), timeTaken;
+		Sudoku solution;
 		Formula f;
 		Environment e;
-		Sudoku solution;
+
+		if (!sudoku.isValid()) {
+			System.err.println("The selected Sudoku is invalid. Aborting.");
+			return;
+		}
 
 		System.out.println("Creating SAT formula...");
 		f = sudoku.getProblem();
@@ -58,7 +69,7 @@ public class Main {
 			timeTaken = (System.nanoTime() - started);
 			System.out.format("Time: %.2fms.\n", timeTaken / Math.pow(10, 6));
 		} else {
-			System.err.println("Failed solving selected Sudoku");
+			System.err.println("Failed solving selected Sudoku.");
 		}
 
 		System.out.println("\n");
@@ -71,6 +82,8 @@ public class Main {
 	 * @param filename name of puzzle file to load
 	 */
 	private static void timedSolveFromFile (int dim, String filename) {
+		System.out.format("Solving '%s'.\n", filename);
+
 		try {
 			timedSolve(Sudoku.fromFile(dim, filename));
 		} catch (ParseException | IOException e) {

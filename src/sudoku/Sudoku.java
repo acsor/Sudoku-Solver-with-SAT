@@ -368,10 +368,103 @@ public class Sudoku {
 		return new ProblemFactory().getProblem();
 	}
 
+	/**
+	 * Interpret the solved SAT problem as a filled-in grid.
+	 *
+	 * @param e Assignment of variables to values that solves this puzzle.
+	 *          Requires that e came from a solution to this.getProblem().
+	 * @return a new Sudoku grid containing the solution to the puzzle, with no
+	 * blank entries.
+	 */
+	public Sudoku interpretSolution (Environment e) {
+		final Sudoku solution = new Sudoku(blockSize, squares);
+
+		for (int row = 0; row < solution.squares.length; row++) {
+			for (int column = 0; column < solution.squares[row].length; column++) {
+				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
+					if (solution.squares[row][column] == CELL_EMPTY && e.get(variableFactory(row, column, value)) == TRUE) {
+						solution.squares[row][column] = value;
+					}
+				}
+			}
+		}
+
+		return solution;
+	}
+
+	private Variable variableFactory (int row, int column, int value) {
+		if (value < CELL_MIN || value > CELL_MAX_VALID) {
+			throw new IllegalStateException(
+					String.format(
+							"Value (%d) must be comprised between %d and %d",
+							value, CELL_MIN, CELL_MAX_VALID
+					)
+			);
+		}
+		if (row < 0 || row > squares.length) {
+			throw new IllegalStateException(
+					String.format(
+							"row (%d) is less than 0 or greater than %d",
+							row, squares.length
+					)
+			);
+		}
+		if (column < 0 || column > squares[row].length) {
+			throw new IllegalStateException(
+					String.format(
+							"column (%d) is less than 0 or greater than %d",
+							column, squares[row].length
+					)
+			);
+		}
+
+		return new Variable(
+				String.join(
+						SEP_OCCUPIES,
+						String.valueOf(row),
+						String.valueOf(column),
+						String.valueOf(value)
+				)
+		);
+	}
+
+	private static int[] stringToIntCellArray (String row) throws ParseException {
+		final int[] result = new int[row.length()];
+		int cellValue;
+
+		for (int i = 0; i < row.length(); i++) {
+			if (String.valueOf(row.charAt(i)).contentEquals(CELL_REP_EMPTY)) {
+				result[i] = CELL_EMPTY;
+			} else {
+				cellValue = Integer.valueOf("" + row.subSequence(i, i + 1));
+
+				if (cellValue <= CELL_MIN || cellValue > CELL_MAX_VALID) {
+					throw new ParseException(
+							String.format(
+									"Unrecognized symbol %c", row.charAt(i)
+							)
+					);
+				} else {
+					result[i] = cellValue;
+				}
+			}
+		}
+
+		return result;
+	}
+
+	private boolean valueHitExceedsOne (int[] values) {
+		for (int i = 1; i < values.length; i++) {
+			if (values[i] > 1)
+				return true;
+		}
+
+		return false;
+	}
+
 	private class ProblemFactory {
 
 		public Formula getProblem () {
-			Formula[] steps = new Formula[5];
 			Formula result = new Formula();
 
 			result = loadFromGrid(result);
@@ -379,20 +472,6 @@ public class Sudoku {
 			result = exactlyOncePerRow(result);
 			result = exactlyOncePerColumn(result);
 			result = exactlyOncePerBlock(result);
-
-//			for (int i = 0; i < steps.length; i++) {
-//				steps[i] = new Formula();
-//			}
-//
-//			steps[0] = loadFromGrid(steps[0]);
-//			steps[1] = atMostOneDigitPerSquare(steps[1]);
-//			steps[2] = exactlyOncePerRow(steps[2]);
-//			steps[3] = exactlyOncePerColumn(steps[3]);
-//			steps[4] = exactlyOncePerBlock(steps[4]);
-//
-//			for (Formula step: steps) {
-//				result = result.and(step);
-//			}
 
 			return result;
 		}
@@ -439,9 +518,9 @@ public class Sudoku {
 		private Formula exactlyOncePerRow (Formula f) {
 			Clause atLeastOnce, atMostOnce;
 
-			//The code below will guarantee that a certain digit k will appear at least once in every row r.
-			for (int row = 0; row < squares.length; row++) {
-				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
+			//The code below guarantees that a certain digit k will appear at least once in every row r.
+			for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
+				for (int row = 0; row < squares.length; row++) {
 					atLeastOnce = new Clause();
 
 					for (int column = 0; column < squares[row].length; column++) {
@@ -456,7 +535,7 @@ public class Sudoku {
 				}
 			}
 
-			//The code below will guarantee that every valid digit k does not appear more than once in a given row r.
+			//The code below guarantees that every valid digit k does not appear more than once in a given row r.
 			for (int row = 0; row < squares.length; row++) {
 				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
 					for (int firstCol = 0; firstCol < squares[row].length; firstCol++) {
@@ -476,7 +555,7 @@ public class Sudoku {
 		private Formula exactlyOncePerColumn (Formula f) {
 			Clause atLeastOnce, atMostOnce;
 
-			/* The code below guarantees that each valid value k appear at least once in every column c.
+			/* The code below guarantees that each valid value k appears at least once in every column c.
 			The number of columns to iterate on is based on the number of "columns" or cells contained within the
 			first row (see the condition of the for loop below). */
 			for (int column = 0; column < squares[0].length; column++) {
@@ -569,100 +648,6 @@ public class Sudoku {
 			);
 		}
 
-	}
-
-	/**
-	 * Interpret the solved SAT problem as a filled-in grid.
-	 *
-	 * @param e Assignment of variables to values that solves this puzzle.
-	 *          Requires that e came from a solution to this.getProblem().
-	 * @return a new Sudoku grid containing the solution to the puzzle, with no
-	 * blank entries.
-	 */
-	public Sudoku interpretSolution (Environment e) {
-		final Sudoku solution = new Sudoku(blockSize, squares);
-
-		for (int row = 0; row < solution.squares.length; row++) {
-			for (int column = 0; column < solution.squares[row].length; column++) {
-				for (int value = CELL_MIN_VALID; value <= CELL_MAX_VALID; value++) {
-					if (solution.squares[row][column] == CELL_EMPTY && e.get(variableFactory(row, column, value)) == TRUE) {
-						solution.squares[row][column] = value;
-					}
-				}
-			}
-		}
-
-		return solution;
-	}
-
-	private Variable variableFactory (int row, int column, int value) {
-		if (value < CELL_MIN || value > CELL_MAX_VALID) {
-			throw new IllegalStateException(
-					String.format(
-							"Value (%d) must be comprised between %d and %d",
-							value, CELL_MIN, CELL_MAX_VALID
-					)
-			);
-		}
-		if (row < 0 || row > squares.length) {
-			throw new IllegalStateException(
-					String.format(
-							"row (%d) is less than 0 or greater than %d",
-							row, squares.length
-					)
-			);
-		}
-		if (column < 0 || column > squares[row].length) {
-			throw new IllegalStateException(
-					String.format(
-							"column (%d) is less than 0 or greater than %d",
-							column, squares[row].length
-					)
-			);
-		}
-
-		return new Variable(
-				String.join(
-						SEP_OCCUPIES,
-						String.valueOf(row),
-						String.valueOf(column),
-						String.valueOf(value)
-				) + "\n"
-		);
-	}
-
-	private static int[] stringToIntCellArray (String row) throws ParseException {
-		final int[] result = new int[row.length()];
-		int cellValue;
-
-		for (int i = 0; i < row.length(); i++) {
-			if (String.valueOf(row.charAt(i)).contentEquals(CELL_REP_EMPTY)) {
-				result[i] = CELL_EMPTY;
-			} else {
-				cellValue = Integer.valueOf("" + row.subSequence(i, i + 1));
-
-				if (cellValue <= CELL_MIN || cellValue > CELL_MAX_VALID) {
-					throw new ParseException(
-							String.format(
-									"Unrecognized symbol %c", row.charAt(i)
-							)
-					);
-				} else {
-					result[i] = cellValue;
-				}
-			}
-		}
-
-		return result;
-	}
-
-	private boolean valueHitExceedsOne (int[] values) {
-		for (int i = 0; i < values.length; i++) {
-			if (values[i] > 1)
-				return true;
-		}
-
-		return false;
 	}
 
 	public static class SudokuCell {
